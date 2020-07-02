@@ -23,16 +23,19 @@ This was tested on iPhone 11 Pro (13.5) and iPhone XS (12.1.1) and iPhone X (11.
 
  - **Prysm**  
 
+
  If the theme doesn't apply after you enable it in your theme engine (and have it above any other CC theme you have), you'll need to move the Icons inside  */Library/Themes/Lineal CC.theme/Bundles/Prysm/Icons*   **to**   */Library/Application Support/Prysm/Icons*  
 
 **Remember to back up the original icons first!**  
 
  - **Stock CC**  
 
+
 The WiFi and Bluetooth icons are themed using **BetterCCIcons13**. I've included both files inside the theme folder   */Library/Themes/Lineal CC.theme/Bundles/BetterCCIconsPro* , so you guys need to move them (just the images, not the entire folder) to   */Library/PreferenceBundles/BetterCCIcons13.bundle* and then enable Glyph mode in the settings.  
 
 
  - **Animated Toggles**  
+
 
 Such as DND, Lock Orientation and so on are themed, you need the toggles from FlipConvert from JulioVerne's repo, and FlipSwitch from rpetri repo.  
 
@@ -43,16 +46,19 @@ You should use **Snowboard + Snowboard UI Extentio**n from SparkDev's Repo, or *
 
   - **Prysm**  
 
+
  If the theme doesn't apply after you enable it in your theme engine (and have it above any other CC theme you have), you'll need to move the Icons inside  */Library/Themes/Lineal CC.theme/Folders/Prysm/Icons*   **to**   */Library/Application Support/Prysm/Icons*  
 
 **Remember to back up the original icons first!**  
 
  - **Stock CC**  
 
+
 The WiFi and Bluetooth icons are themed using **BetterCCIconsPro**. I've included both files inside the theme folder   */Library/Themes/Lineal CC.theme/Bundles/BetterCCIconsPro* , so you guys need to move them (just the images, not the entire folder) to   */Library/PreferenceBundles/BetterCCIconsPro.bundle* and then enable Glyph mode in the settings.  
 
 
  - **Animated Toggles**  
+
 
 Such as DND, Lock Orientation and so on are themed, you need the toggles from FlipConvert from JulioVerne's repo, and FlipSwitch from rpetri repo.  
 
