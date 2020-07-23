@@ -8,5 +8,5 @@ Components: main
 Description: A Cydia Repo
 
 SHA256:
- f1f05e31cc134d050260fd35567338c48d035d699b272d9d3a1d6a4b594e8fa3 968 Packages.bz2
- 53d9c03f71f0ced19dbc6336bb24db9a85b1cdcefa735cba09385414020a159a 888 Packages.xz
+ 9a0ee859848e51281dd6150730c560e1bae848884fcb3a720497d2c5a74d07b9 966 Packages.bz2
+ a7be76ad3dae757200e2eedc5d2e7608f9fb0cff11fa8432eff604e97c618a48 884 Packages.xz
