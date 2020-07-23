@@ -5,8 +5,8 @@ Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
-Description: A Cydia Repo
+Description: Themes, themes... and more themes
 
 SHA256:
- 0b43cd620e4fcf47a227366f6b2497431e2b2683d1fe32b26709db9fc45526c1 968 Packages.bz2
- d1f60434ca44e8e6afbb80c7ae796f2dce291997221e842c50bf0a96533f901b 884 Packages.xz
+ 69494daa1911ba6da1c9540b99ab6675092835f7127dee836ae3169c85579203 981 Packages.bz2
+ fabbbf6a6df032de1761091835b1916c3ff48711f66779d2229d67a838767917 888 Packages.xz
