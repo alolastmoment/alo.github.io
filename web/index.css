@@ -20,9 +20,9 @@
 }
 @media only screen and (min-width: 601px) {
     .body {
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 1000px;
+        margin-left: 20px;
+        margin-right: 10px;
     }
     .scroll_view {
         width: calc(500px - 40px);
@@ -244,4 +244,35 @@ a {
 .fa, .fas {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+
+.col-6{
+  padding:15px;
+}
+
+a.pkg-button {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+a.pkg-button.zebra{
+  border-color:#313131;
+  background-color: #313131;
+}
+
+a.pkg-button.sileo{
+  border-color:rgb(40,163,176);
+  background-color: rgb(40,163,176);
+}
+
+a.pkg-button.installer{
+  border-color:rgb(21,156,215);
+  background-color: rgb(21,156,215);
+}
+
+a.pkg-button.cydia{
+  border-color:rgb(112,64,44);
+  background-color: rgb(112,64,44);
 }
