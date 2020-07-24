@@ -171,7 +171,7 @@ h3 {
 .compatibility{
   background-color:#83BCFF;
   color:#FFFFFF;
-  border:1px solid #ba0000;
+  border:1px solid transparent;
   border-radius:10px;
   padding:5px;
   text-align: center;

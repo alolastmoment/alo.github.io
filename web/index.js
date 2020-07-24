@@ -4,10 +4,10 @@ function compatible(works_min, works_max, tweak_compatibility) {
     works_max = numerize(works_max);
     let el = document.querySelector(".compatibility");
     if (currentiOS < works_min) {
-        el.innerHTML = "Your version of iOS is too old for this package. This package works on " + tweak_compatibility + ".";
+        el.innerHTML = "<i class='fas fa-times'></i> Your version of iOS is too old for this package. This package works on " + tweak_compatibility + ".";
         el.classList.add("red")
     } else if(currentiOS > works_max) {
-        el.innerHTML = "Your version of iOS is too new for this package. This package works on " + tweak_compatibility + ".";
+        el.innerHTML = "<i class='fas fa-times'></i> Your version of iOS is too new for this package. This package works on " + tweak_compatibility + ".";
         el.classList.add("red")
     } else if(String(currentiOS) != "NaN") {
         el.innerHTML = "<i class='fas fa-check'></i> This package works on your device!";
