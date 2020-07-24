@@ -1,7 +1,7 @@
 
 
 ## White Dots Settings Theme
-A very simple Settings theme that uses round white dots. Almost all settings icons are themed. The original design was by [https://twitter.com/_codylow]**(Cody Webb)**.
+A very simple Settings theme that uses round white dots. Almost all settings icons are themed. The original design was by **[https://twitter.com/_codylow](Cody Webb)**.
 
 It looks great on dark backgrounds. Just take a look at the screenshot!
 
