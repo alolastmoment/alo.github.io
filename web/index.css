@@ -160,6 +160,15 @@ h3 {
     opacity: 0.8;
 }
 
+.compatibility{
+  background-color:#83BCFF;
+  color:#FFFFFF;
+  border:1px solid #83BCFF;
+  border-radius:10px;
+  padding:5px;
+  text-align: center;
+}
+
 .green {
     background-color: #A2C5AC;
     border-color: #A2C5AC;
@@ -168,15 +177,6 @@ h3 {
 .red {
     background-color: #FF5263;
     border-color: #FF5263;
-}
-
-.compatibility{
-  background-color:#83BCFF;
-  color:#FFFFFF;
-  border:1px solid #83BCFF;
-  border-radius:10px;
-  padding:5px;
-  text-align: center;
 }
 
 .banner_underlay {
