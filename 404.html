@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=0">
     <title>Alo&#x27;s Repo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="web/index.css">
     <style>a, .tint {color: #677E94} .active {color: #677E94</style>
     <script src="https://kit.fontawesome.com/dda4af39da.js" crossorigin="anonymous"></script>
@@ -20,8 +21,22 @@
 <body>
     <div class="body">
         <h1 class="header left_float">Alo&#x27;s Repo</h1>
-        <a class="header right_float add_sileo tint" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://alo.works">+</a>
-        <div class="scroll_view">
+        /* <a class="header right_float add_sileo tint" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://alo.works">+</a> */
+        <div class="row">
+          <div class="col-md-3 col-xs-6">
+            <a href="zbra://sources/add/alo.works">Add to Zebra</a>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <a href="installer://add/repo=alo.works">Add to Installer</a>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <a href="sileo://source/alo.works">Add to Sileo</a>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://alo.works">Add to Cydia</a>
+          </div>
+        </div>
+        /* <div class="scroll_view">
             <a href="depiction/web/io.github.worksbybbs.linealcc.html" style="background-image: url(assets/io.github.worksbybbs.linealcc/banner.png)" class="card">
                 <p>Lineal CC</p>
             </a><a href="depiction/web/io.github.worksbybbs.flatmusiccontrols11.html" style="background-image: url(assets/io.github.worksbybbs.flatmusiccontrols11/banner.png)" class="card">
@@ -33,7 +48,7 @@
             </a><a href="depiction/web/works.alo.quartzsettings.html" style="background-image: url(assets/works.alo.quartzsettings/banner.png)" class="card">
                 <p>Quartz Settings</p>
             </a>
-        </div>
+        </div> */
         <h2 class="header">Packages</h2>
         <div class="packageList">
                 <a class="subtle_link" href="depiction/web/io.github.worksbybbs.linealcc.html">
@@ -111,6 +126,9 @@
         </div>
         <div class="caption center footer">Silica 1.2.2 – Updated 2020-07-24</div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
     <script src="web/index.js"></script>
 </html>
