@@ -1,8 +1,7 @@
 
 
-## Lineal Music Controls
+## Flat Music Controls
 They work in the music app, LS, and CC.
-They go well together with Lineal CC theme.
 
 
 ## How to Apply the Theme
