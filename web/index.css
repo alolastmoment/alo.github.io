@@ -162,16 +162,18 @@ h3 {
 
 .green {
     background-color: #A2C5AC;
+    border-color: #A2C5AC;
 }
 
 .red {
     background-color: #FF5263;
+    border-color: #FF5263;
 }
 
 .compatibility{
   background-color:#83BCFF;
   color:#FFFFFF;
-  border:1px solid transparent;
+  border:1px solid #83BCFF;
   border-radius:10px;
   padding:5px;
   text-align: center;
