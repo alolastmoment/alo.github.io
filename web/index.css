@@ -295,7 +295,7 @@ a.pkg-button.cydia{
     transition: all .1s ease;
     background-color: #fff;
     text-align:center;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 15%, rgba(181, 181, 181, 0.25));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 15%, rgb(230 230 230 / 25%));
     box-shadow: 2px 5px 8px 1px rgba(0, 0, 0, 0.07);
 }
 
