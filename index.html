@@ -90,9 +90,9 @@
             <option value="Themes (Control Center)" onclick="filterPkg(this.id)">Control Center</option>
             <option value="Themes (Music Controls)" onclick="filterPkg(this.id)">Music Controls</option>
             <option value="Themes (Settings)" onclick="filterPkg(this.id)">Settings</option>
+            <option value="Themes (NiceBarX)" onclick="filterPkg(this.id)">NiceBarX</option>
             <!--<option value="Themes (UI)" onclick="filterPkg(this.id)">UI</option>
             <option value="Themes (Statusbar)" onclick="filterPkg(this.id)">Statusbar</option>
-            <option value="Themes (NiceBarX)" onclick="filterPkg(this.id)">NiceBarX</option>
             <option value="Themes (Message Bubbles)" onclick="filterPkg(this.id)">Message Bubbles</option>
             <option value="Themes (WhatsApp Bubbles)" onclick="filterPkg(this.id)">WhatsApp Bubbles</option>-->
 
@@ -245,6 +245,26 @@
           </div>
 
           <div class="col-md-3 col-12 packageListItem">
+            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.nicebarxflat.html">
+              <div class="package-card">
+                <div class="row">
+                  <div class="col">
+
+                    <img class="img-fluid" src="assets/io.github.worksbybbs.nicebarxflat/banner.png">
+
+                    <div class="package-card-title">
+                      <p class="title">Flat Icons for NiceBarX</p>
+                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
+                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (NiceBarX)</p>
+                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-3 col-12 packageListItem">
             <a class="subtle_link" href="depiction/web/io.github.worksbybbs.compacticonswhite.html">
               <div class="package-card">
                 <div class="row">
@@ -285,6 +305,26 @@
           </div>
 
           <div class="col-md-3 col-12 packageListItem">
+            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.nicebarxlineal.html">
+              <div class="package-card">
+                <div class="row">
+                  <div class="col">
+
+                    <img class="img-fluid" src="assets/io.github.worksbybbs.nicebarxlineal/banner.png">
+
+                    <div class="package-card-title">
+                      <p class="title">Lineal Icons for NiceBarX</p>
+                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
+                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (NiceBarX)</p>
+                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-3 col-12 packageListItem">
             <a class="subtle_link" href="depiction/web/io.github.worksbybbs.compacticons.html">
               <div class="package-card">
                 <div class="row">
@@ -313,7 +353,7 @@
   <script>
     function filterPkg() {
       var selectedOption = $('#pkgSelect').val();
-      
+
       if(selectedOption == "all"){
         $('.package-card').parent().parent().fadeOut(0);
         $('.package-card').parent().parent().fadeIn('fast');
