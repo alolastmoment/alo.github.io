@@ -219,6 +219,7 @@ h3 {
 
 a, a:hover, a:focus {
   text-decoration: none;
+  color: #677E94;
 }
 
 .table-btn, .table-btn>div {
