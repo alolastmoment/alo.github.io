@@ -1,7 +1,7 @@
-Alo (Laetus #1). The Original Blue.
------------------------------------
+Alo (Laetus #1) - The Purple Variant
+------------------------------------
 
-A Reva UI inspired Laetus theme.
+A Reva UI inspired Laetus theme. The colors for this version [came from this tweet.](https://twitter.com/davegeek1/status/1302151821926871047?s=21)
 
 It was tested with the following Languages:
 
