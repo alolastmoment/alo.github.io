@@ -45,7 +45,7 @@ You will need Laetus tweak from SparkDev repo, or from his Discord. Then:
 Safari (and other apps) Mis-aligned Keyboard
 --------------------------------------------
 
-If you notice that the URL keyboard in safari, or the keyboard when tapping "To:" field in Messages or Mail is misaligned, you will need <span style="color:#ff7369;">*Keyboard Controller*</span> tweak.
+If you notice that the URL keyboard in safari, or the keyboard when tapping "To:" field in Messages or Mail is misaligned, you will need *Keyboard Controller* tweak.
 
 It is found in BigBoss repo. It allows you to set a specific keyboard layout instead of other layouts.
 
