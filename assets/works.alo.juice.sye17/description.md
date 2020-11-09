@@ -1,7 +1,7 @@
 Alo-Sye17 Juice Battery Theme
 -----------------------------------
 
-This is a recreation of [xxSomnus's Battery theme](https://twitter.com/xxsomnus/status/1251554039491260416?s=21) to make it work with Juice. Created for the design goes entirely to him.
+This is a recreation of [xxSomnus's Battery theme](https://twitter.com/xxsomnus/status/1251554039491260416?s=21) to make it work with Juice. Credit for the design goes entirely to him.
 
 #### This is only the battery. NOT the WiFi or the Cellular Signal Themes.
 
