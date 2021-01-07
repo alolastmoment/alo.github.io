@@ -5,7 +5,7 @@ This package contains the entire collection of my kaleidscope presets. Instead o
 
 This package will be frequently updated with more presets as I make them.
 
-This requires **Kaleidscope** tweak from SparkDev repo.
+This requires **Kaleidoscope** tweak from SparkDev repo.
 
 Disclaimer
 ----
