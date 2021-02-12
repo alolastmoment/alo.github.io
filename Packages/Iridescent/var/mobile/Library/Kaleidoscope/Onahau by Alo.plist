@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>_alertControllerDimmingViewColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.101961 0.0980392 0.117647 0.43</string>
+		<key>2</key>
+		<string>0.101961 0.0980392 0.117647 0.507778</string>
+	</dict>
+	<key>_carSystemFocusColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.192157 0.737255 0.909804 1</string>
+		<key>2</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+	</dict>
+	<key>_controlHighlightColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.930091 0.930091 0.936333 1</string>
+		<key>2</key>
+		<string>0.116585 0.116585 0.120014 0.816172</string>
+	</dict>
+	<key>_groupTableHeaderFooterTextColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+		<key>2</key>
+		<string>0.815686 0.92549 0.996078 1</string>
+		<key>32</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+		<key>34</key>
+		<string>0.815686 0.92549 0.996078 1</string>
+	</dict>
+	<key>_systemChromeShadowColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.101961 0.0980392 0.117647 0.454444</string>
+		<key>2</key>
+		<string>1 1 1 0.15</string>
+	</dict>
+	<key>_textFieldBorderColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.101961 0.0980392 0.117647 0</string>
+		<key>2</key>
+		<string>1 1 1 0.2</string>
+	</dict>
+	<key>_windowBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.101961 0.0980392 0.117647 0.647778</string>
+		<key>16</key>
+		<string>0.813529 0.813529 0.830549 1</string>
+		<key>18</key>
+		<string>0.141176 0.141176 0.160784 0.541111</string>
+	</dict>
+	<key>groupTableViewBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.959669 0.959669 0.968374 1</string>
+		<key>130</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>162</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>2</key>
+		<string>0.0179401 0.0280949 0.0443427 1</string>
+		<key>32</key>
+		<string>1 1 1 1</string>
+		<key>34</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>labelColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+		<key>2</key>
+		<string>1 1 1 1</string>
+	</dict>
+	<key>linkColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.192157 0.737255 0.909804 1</string>
+		<key>2</key>
+		<string>0.192157 0.737255 0.909804 1</string>
+	</dict>
+	<key>opaqueSeparatorColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.776471 0.776471 0.784314 0</string>
+		<key>2</key>
+		<string>0.219608 0.219608 0.227451 0</string>
+	</dict>
+	<key>placeholderTextColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.235294 0.235294 0.262745 0.3</string>
+		<key>2</key>
+		<string>0.815686 0.92549 0.996078 1</string>
+		<key>32</key>
+		<string>0.235294 0.235294 0.262745 0.38</string>
+		<key>34</key>
+		<string>0.921569 0.921569 0.960784 0.38</string>
+	</dict>
+	<key>quaternaryLabelColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.192157 0.737255 0.909804 1</string>
+		<key>2</key>
+		<string>0.921569 0.921569 0.941176 0.602094</string>
+		<key>32</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>34</key>
+		<string>0.921569 0.921569 0.960784 0.26</string>
+	</dict>
+	<key>secondaryLabelColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.192157 0.737255 0.909804 1</string>
+		<key>2</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+		<key>32</key>
+		<string>0.192157 0.737255 0.909804 1</string>
+		<key>34</key>
+		<string>0.921569 0.921569 0.960784 0.68</string>
+	</dict>
+	<key>secondarySystemFillColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>2</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+		<key>32</key>
+		<string>0.470588 0.470588 0.501961 0.24</string>
+		<key>34</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+	</dict>
+	<key>secondarySystemGroupedBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>130</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>162</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>2</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>32</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>34</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>separatorColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.101961 0.0980392 0.117647 0</string>
+		<key>2</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+		<key>32</key>
+		<string>0.235294 0.235294 0.262745 0</string>
+		<key>34</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+	</dict>
+	<key>systemBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>1 1 1 1</string>
+		<key>130</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>162</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>2</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>systemBlueColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+		<key>2</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+		<key>32</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+		<key>34</key>
+		<string>0.976471 0.827451 0.643137 1</string>
+	</dict>
+	<key>systemFillColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>2</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>32</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>34</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>systemGray4Color</key>
+	<dict>
+		<key>0</key>
+		<string>0.747209 0.747209 0.765085 1</string>
+		<key>2</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+		<key>32</key>
+		<string>0.737255 0.737255 0.752941 1</string>
+		<key>34</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+	</dict>
+	<key>systemGray5Color</key>
+	<dict>
+		<key>0</key>
+		<string>0.898039 0.898039 0.917647 1</string>
+		<key>2</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+		<key>32</key>
+		<string>0.847059 0.847059 0.862745 1</string>
+		<key>34</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>systemGrayColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.647059 0.647059 0.658824 1</string>
+		<key>32</key>
+		<string>0.647392 0.647392 0.656987 1</string>
+		<key>34</key>
+		<string>0.647059 0.647059 0.658824 1</string>
+	</dict>
+	<key>systemGreenColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.121569 0.913725 0.764706 1</string>
+		<key>16</key>
+		<string>0.121569 0.913725 0.764706 1</string>
+		<key>18</key>
+		<string>0.121569 0.913725 0.764706 1</string>
+		<key>2</key>
+		<string>0.121569 0.913725 0.764706 1</string>
+		<key>32</key>
+		<string>0.121569 0.913725 0.764706 1</string>
+		<key>34</key>
+		<string>0.121569 0.913725 0.764706 1</string>
+	</dict>
+	<key>systemGroupedBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.94902 0.94902 0.968627 1</string>
+		<key>130</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>162</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>2</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+		<key>32</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>34</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+	</dict>
+	<key>systemOrangeColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.937255 0.458824 0.117647 1</string>
+		<key>2</key>
+		<string>0.937255 0.458824 0.117647 1</string>
+		<key>32</key>
+		<string>0.937255 0.458824 0.117647 1</string>
+		<key>34</key>
+		<string>0.937255 0.458824 0.117647 1</string>
+	</dict>
+	<key>systemPinkColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.992157 0.309804 0.513726 1</string>
+		<key>16</key>
+		<string>0.992157 0.309804 0.513726 1</string>
+		<key>18</key>
+		<string>0.992157 0.309804 0.513726 1</string>
+		<key>2</key>
+		<string>0.992157 0.309804 0.513726 1</string>
+		<key>32</key>
+		<string>0.992157 0.309804 0.513726 1</string>
+		<key>34</key>
+		<string>0.992157 0.309804 0.513726 1</string>
+	</dict>
+	<key>systemRedColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.980392 0.321569 0.321569 1</string>
+		<key>2</key>
+		<string>0.980392 0.321569 0.321569 1</string>
+		<key>32</key>
+		<string>0.980392 0.321569 0.321569 1</string>
+		<key>34</key>
+		<string>0.980392 0.321569 0.321569 1</string>
+	</dict>
+	<key>tableBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>1 1 1 1</string>
+		<key>130</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>16</key>
+		<string>0.937255 0.937255 0.956863 1</string>
+		<key>162</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>18</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>2</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>tableCellGroupedBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>1 1 1 1</string>
+		<key>130</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>162</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>2</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>32</key>
+		<string>1 1 1 1</string>
+		<key>34</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+	</dict>
+	<key>tableCellPlainBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>1 1 1 1</string>
+		<key>130</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>162</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>2</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+		<key>32</key>
+		<string>1 1 1 1</string>
+		<key>34</key>
+		<string>0.0196078 0.027451 0.0431373 1</string>
+	</dict>
+	<key>tablePlainHeaderFooterBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>130</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>162</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>2</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>32</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>34</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+	</dict>
+	<key>tablePlainHeaderFooterFloatingBackgroundColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>130</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>162</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>2</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+		<key>32</key>
+		<string>0.921569 0.921569 0.941176 1</string>
+		<key>34</key>
+		<string>0.054902 0.0627451 0.0784314 1</string>
+	</dict>
+	<key>tableSeparatorColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.235294 0.235294 0.262745 0</string>
+		<key>2</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+		<key>32</key>
+		<string>0.235294 0.235294 0.262745 0</string>
+		<key>34</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+	</dict>
+	<key>tableSeparatorDarkColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.235294 0.235294 0.262745 0</string>
+		<key>2</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+		<key>32</key>
+		<string>0.235294 0.235294 0.262745 0.37</string>
+		<key>34</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+	</dict>
+	<key>tableSeparatorLightColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.235294 0.235294 0.262745 0</string>
+		<key>2</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+		<key>32</key>
+		<string>0.235294 0.235294 0.262745 0</string>
+		<key>34</key>
+		<string>0.329412 0.329412 0.345098 0</string>
+	</dict>
+	<key>tertiaryLabelColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.235294 0.235294 0.262745 0.443333</string>
+		<key>2</key>
+		<string>0.921569 0.921569 0.941176 0.494124</string>
+		<key>32</key>
+		<string>0.235294 0.235294 0.262745 0.38</string>
+		<key>34</key>
+		<string>0.921569 0.921569 0.960784 0.38</string>
+	</dict>
+	<key>tertiarySystemFillColor</key>
+	<dict>
+		<key>0</key>
+		<string>0.938333 0.938333 0.938333 1</string>
+		<key>2</key>
+		<string>0.109804 0.117647 0.133333 1</string>
+		<key>32</key>
+		<string>0.462745 0.462745 0.501961 0.2</string>
+		<key>34</key>
+		<string>0.462745 0.462745 0.501961 0.32</string>
+	</dict>
+</dict>
+</plist>

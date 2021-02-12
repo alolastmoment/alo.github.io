@@ -1,0 +1,31 @@
+{
+    "bundle_id": "works.alo.moonstones.mars",
+    "name": "Moonstones Settings (Mars)",
+    "version": "1.0",
+    "tagline": "A very simple yet elegant settings theme that will add extra flair to any setup",
+    "homepage":"https://alo.works/",
+    "developer": {
+        "name": "KennyRoo",
+        "email": "bbscydia@gmail.com"
+    },
+    "maintainer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/_Kennyroo"
+        }
+    ],
+    "section": "Themes (Settings)",
+    "works_min": "7.0",
+    "works_max": "14.3",
+    "featured": "true",
+    "changelog": [
+      {
+          "version": "1.0",
+          "changes": "\t\n\u2022 Initial Release"
+      }
+    ]
+}

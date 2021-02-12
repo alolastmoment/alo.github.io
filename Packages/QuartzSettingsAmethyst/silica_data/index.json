@@ -1,0 +1,31 @@
+{
+    "bundle_id": "works.alo.quartzsettings.amethyst",
+    "name": "Quartz Settings (Amethyst)",
+    "version": "1.0",
+    "tagline": "An Amethyst-inspired fancy look for your settings",
+    "homepage":"https://alo.works/",
+    "developer": {
+        "name": "HSL",
+        "email": "happysolucki@outlook.com"
+    },
+    "maintainer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/happysolucki"
+        }
+    ],
+    "section": "Themes (Settings)",
+    "works_min": "7.0",
+    "works_max": "14.3",
+    "featured": "true",
+    "changelog": [
+      {
+          "version": "1.0",
+          "changes": "\t\n\u2022 Initial Release"
+      }
+    ]
+}

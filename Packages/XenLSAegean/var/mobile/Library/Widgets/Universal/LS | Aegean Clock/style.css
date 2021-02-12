@@ -1,0 +1,183 @@
+@font-face {
+    font-family: ArchiveReg;
+
+    src: url(Stuff/Archive-Regular.ttf);
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: ArchiveReg;
+    padding: 0 6px;
+    /*    font-size: 14px;*/
+
+}
+
+#mainBody {
+    color: #fff;
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+p {
+    margin: 0;
+}
+
+#clockbg {
+    width: 250px;
+    height: 250px;
+}
+
+#clockNumbers {
+    position: relative;
+    top: 0;
+    width: 250px;
+    height: 250px;
+}
+
+#n12 {
+    position: absolute;
+    top: 24%;
+    left: 46%;
+}
+
+#n3 {
+    position: absolute;
+    right: 25%;
+    top: 46%;
+}
+
+#n9 {
+    position: absolute;
+    left: 25%;
+    top: 46%;
+}
+
+#n6 {
+    position: absolute;
+    bottom: 24%;
+    left: 48%;
+}
+
+#clockCanvas {
+    position: absolute;
+    left: 6%;
+    top: 2.35%;
+}
+
+.section {
+    background-color: #FFF;
+    padding: 20px;
+    width: 550px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    display: grid;
+    justify-content: center;
+}
+
+#analogClock {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+#analogClock .circle {
+    width: 10px;
+    height: 10px;
+    background-color: #2a4e65;
+    border: 2px solid;
+    border-color:#FFF;
+    border-radius: 50%;
+    position: relative;
+    z-index: 100;
+}
+
+#analogClock > * {
+    grid-area: 1 / 1;
+}
+
+#analogClock .second,
+#analogClock .hour,
+#analogClock .minute {
+    position: relative;
+    transform-origin: left;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 0 0 1px transparent;
+}
+
+#analogClock .second {
+    height: 0px;
+    width: 140px;
+    border-top: 2px solid #E83151;
+
+    left: 70px;
+    top: 0px;
+
+    transform: rotate(var(--seconds));
+}
+
+#analogClock .hour {
+    height: 0px;
+    width: 35px;
+
+    border-top: 3px solid;
+    border-top-color: 3px solid;
+    left: 17px;
+    top: 0px;
+
+    transform: rotate(var(--hours));
+
+}
+
+#analogClock .minute {
+    height: 0px;
+    width: 47px;
+    border-top: 3px solid;
+    border-top-color: #2a4e65;
+    left: 23px;
+    top: 0px;
+
+
+    transform: rotate(var(--minutes));
+}
+
+#dateDiv {
+    width: 100%;
+}
+
+#date {
+    text-align: center;
+}
+
+#circle1 {
+    width: 5px;
+    height: 5px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100;
+    left: 25%;
+    top: 86%;
+}
+
+#circle2 {
+    width: 5px;
+    height: 5px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100;
+    right: 25%;
+    top: 86%;
+}

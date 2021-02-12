@@ -1,0 +1,31 @@
+{
+    "bundle_id": "io.hsl.laetus.twixy",
+    "name": "HSL Laetus Theme - Twixy",
+    "version": "1.0",
+    "tagline": "A modern laetus theme.",
+    "homepage": "https://alo.works/",
+    "developer": {
+        "name": "happysolucki",
+        "email": "happysolucki@outlook.com"
+    },
+    "maintainer": {
+        "name": "happysolucki",
+        "email": "happysolucki@outlook.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/happysolucki"
+        }
+    ],
+    "section": "Themes (Laetus)",
+    "works_min": "13.0",
+    "works_max": "14.3",
+    "featured": "true",
+    "changelog": [
+        {
+            "version": "1.0",
+            "changes": "\t\n\u2022 Initial version"
+        }
+    ]
+}

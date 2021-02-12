@@ -1,0 +1,39 @@
+{
+    "bundle_id": "io.github.worksbybbs.yellowdotssettings",
+    "name": "Yellow Dots Settings",
+    "version": "1.2",
+    "tagline": "Yellow Dots Settings",
+    "homepage":"https://alo.works/",
+    "developer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "maintainer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/alolastmoment"
+        }
+    ],
+    "section": "Themes (Settings)",
+    "works_min": "7.0",
+    "works_max": "14.3",
+    "featured": "false",
+    "changelog": [
+      {
+          "version": "1.0",
+          "changes": "\t\n\u2022 Initial Release"
+      },
+      {
+          "version": "1.1",
+          "changes": "\t\n\u2022 Added More Settings Icons\t\n\u2022 Added Support for iPhones 6, 6s, 7, and 8"
+      },
+      {
+          "version": "1.2",
+          "changes": "\t\n\u2022 Fixed icon sizes"
+      }
+    ]
+}

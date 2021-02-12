@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=0">
+  <title>{{repo_name}}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="web/index.css">
+
+  <style>
+    a,
+    .tint {
+      color: {
+          {
+          tint_color
+        }
+      }
+    }
+
+    .active {
+      color: {
+          {
+          tint_color
+        }
+      }
+  </style>
+  <script src="https://kit.fontawesome.com/dda4af39da.js" crossorigin="anonymous"></script>
+  <meta name="description" content="{{repo_desc}}">
+  <meta property="og:title" content="{{repo_name}}">
+  <meta property="og:description" content="{{repo_desc}}">
+  <meta property="og:image" content="https://{{repo_url}}/CydiaIcon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{repo_name}}">
+  <meta name="twitter:description" content="{{repo_desc}}">
+  <meta name="twitter:image" content="https://{{repo_url}}/CydiaIcon.png">
+  <meta name="theme-color" content="{{tint_color}}">
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+</head>
+
+<body>
+  <div class="body" id="bodyDiv">
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <img style="width:50px;height:50px;" src="./CydiaIcon.png"><br />
+        <h1 class="header">{{repo_name}}</h1>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p>If you find youself appreciating my works, please consider supporting me <a
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BBSCydia%40gmail%2ecom&amp;lc=QA&amp;item_name=WorksByBBS%20Repo%20Donation&amp;no_note=0&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest">
+            via PayPal <i class="fab fa-paypal"></i></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-6 text-center">
+        <a class="pkg-button zebra" href="zbra://sources/add/https://{{repo_url}}">Zebra</a>
+      </div>
+      <div class="col-md-3 col-6 text-center">
+        <a class="pkg-button installer" href="installer://add/https://{{repo_url}}">Installer</a>
+      </div>
+      <div class="col-md-3 col-6 text-center">
+        <a class="pkg-button sileo" href="sileo://source/https://{{repo_url}}">Sileo</a>
+      </div>
+      <div class="col-md-3 col-6 text-center">
+        <a class="pkg-button cydia" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://{{repo_url}}">Cydia</a>
+      </div>
+    </div>
+
+    <h2 class="header"><i class="fas fa-shapes"></i></h2>
+    <div id="filterList">
+      <div class="row text-center">
+        <div class="col-12">
+          <label id="pkgSelectLabel" for="pkgSelect">Filter Packages: </label>
+          <select id="pkgSelect" name="pkgSelect" onchange="filterPkg()">
+            <option value="all" onclick="filterPkg(this.id)" selected>All</option>
+            <option value="Themes (Icons)" onclick="filterPkg(this.id)">Icons</option>
+            <option value="Themes (Control Center)" onclick="filterPkg(this.id)">Control Center</option>
+            <option value="Themes (Music Controls)" onclick="filterPkg(this.id)">Music Controls</option>
+            <option value="Themes (Settings)" onclick="filterPkg(this.id)">Settings</option>
+            <option value="Themes (NiceBarX)" onclick="filterPkg(this.id)">NiceBarX</option>
+            <option value="Themes (Laetus)" onclick="filterPkg(this.id)">Laetus</option>
+            <option value="Themes (Juice)" onclick="filterPkg(this.id)">Juice</option>
+            <option value="Widgets" onclick="filterPkg(this.id)">Widgets</option>
+            <option value="Kaleidoscope" onclick="filterPkg(this.id)">Kaleidoscope</option>
+            <!--<option value="Themes (UI)" onclick="filterPkg(this.id)">UI</option>
+            <option value="Themes (Statusbar)" onclick="filterPkg(this.id)">Statusbar</option>
+            <option value="Themes (Message Bubbles)" onclick="filterPkg(this.id)">Message Bubbles</option>
+            <option value="Themes (WhatsApp Bubbles)" onclick="filterPkg(this.id)">WhatsApp Bubbles</option>-->
+
+          </select>
+        </div>
+
+      </div>
+    </div>
+    <div class="packageList">
+      <div class="row">
+        {{#tweak_release}}
+
+          <div class="col-md-3 col-12 packageListItem">
+            <a class="subtle_link" href="depiction/web/{{bundle_id}}.html">
+              <div class="package-card">
+                <div class="row">
+                  <div class="col">
+
+                    <img class="img-fluid" src="assets/{{bundle_id}}/banner.png">
+
+                    <div class="package-card-title">
+                      <p class="title">{{name}}</p>
+                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> {{developer.name}}</p>
+                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> {{section}}</p>
+                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> {{version}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {{/tweak_release}}
+      </div>
+    </div>
+    <div class="caption center footer" style="font-size:12px;">2020 © Alo ALL RIGHTS RESERVED</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    function filterPkg() {
+      var selectedOption = $('#pkgSelect').val();
+
+      if(selectedOption == "all"){
+        $('.package-card').parent().parent().fadeOut(0);
+        $('.package-card').parent().parent().fadeIn('fast');
+      } else {
+        var divContains = $('div.packageListItem').find("p:contains("+selectedOption+")").parent().parent().parent().parent().parent().parent();
+        //console.log(divContains);
+        var divNotContains = $(divContains).parent().children().not(divContains);
+        //console.log(divNotContains);
+
+        $(divNotContains).fadeOut(0);
+        $(divContains).fadeOut(0);
+        $(divContains).fadeIn('fast');
+
+
+      }
+
+
+    }
+  </script>
+
+</body>
+<script src="web/index.js"></script>
+
+</html>

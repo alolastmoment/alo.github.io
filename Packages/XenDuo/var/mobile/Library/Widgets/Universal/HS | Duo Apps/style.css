@@ -1,0 +1,47 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    padding: 0 6px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+.twocolordiv  {
+position: relative;
+z-index: 9;
+background: #b4ada7;
+width:85%;
+height:450px;
+border-radius:20px;
+box-shadow: 1px 3px 10px rgba(0,0,0,0.3);
+}
+
+.twocolordiv:before {
+content: "";
+position: absolute;
+z-index: -1;
+top: 0;
+right: 50%;
+bottom: 0;
+left: 0;
+background: #414551;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+}
+
+#card-title{
+font-size:0.9rem;
+padding-bottom:10px;
+padding-left:5px;
+}

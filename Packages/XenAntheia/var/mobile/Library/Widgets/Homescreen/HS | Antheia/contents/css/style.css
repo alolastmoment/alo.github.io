@@ -1,0 +1,109 @@
+@font-face {
+  font-family: reg;
+  src: url(../fonts/Reef.otf);
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 7.5pt;
+}
+#widget {
+  width: 100vw;
+  height: 100vh;
+  font-family: reg;
+  font-size: calc(1rem + 0.2vw);
+  color: #fff;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.4);
+}
+.container {
+  height: 26%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 25px 25px 0px 0px;
+}
+#container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 25px 25px 0px 0px;
+}
+#infoContainer {
+  width: 86%;
+  max-height: 42%;
+  margin-top: 5.5%;
+}
+.dotO {
+  width: 3.7vw;
+  height: 3.7vw;
+  margin-right: 4.5%;
+}
+.dotI {
+  width: 50%;
+  height: 50%;
+  z-index: 10;
+}
+.dotO::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+.flex {
+  display: flex;
+}
+.pos-r {
+  position: relative;
+}
+.indent {
+  margin: 2.5% 0 0 8.1%;
+}
+.aic {
+  align-items: center;
+}
+.jcc {
+  justify-content: center;
+}
+.circle {
+  border-radius: 50%;
+}
+.hiddenWeather {
+  height: 23.5%;
+}
+@media (prefers-color-scheme: light) {
+  #widget {
+    color: #495147;
+    text-shadow: 1px 1px 1px rgba(200, 200, 200, 0.4);
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .container {
+    height: 30%;
+  }
+  .hiddenWeather {
+    height: 27%;
+  }
+}
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .container {
+    height: 30%;
+  }
+  .hiddenWeather {
+    height: 27%;
+  }
+}

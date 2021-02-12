@@ -1,0 +1,39 @@
+{
+    "bundle_id": "io.github.worksbybbs.nicebarxflat",
+    "name": "Flat Icons for NiceBarX",
+    "version": "1.2",
+    "tagline": "Flat Indicator Icons for NiceBarX",
+    "homepage":"https://alo.works/",
+    "developer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "maintainer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/alolastmoment"
+        }
+    ],
+    "section": "Themes (NiceBarX)",
+    "works_min": "11.0",
+    "works_max": "14.3",
+    "featured": "true",
+    "changelog": [
+      {
+          "version": "1.0",
+          "changes": "\t\n\u2022 Initial Release"
+      },
+      {
+          "version": "1.1",
+          "changes": "\t\n\u2022 Added Support for NiceBarX13"
+      },
+      {
+          "version": "1.2",
+          "changes": "\t\n\u2022 Updated to work with the latest NiceBarX update"
+      }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "bundle_id": "works.alo.xen.duo",
+    "name": "Duo Widgets",
+    "version": "1.0",
+    "tagline": "3 Dual Tone Widgets",
+    "homepage":"https://alo.works/",
+    "developer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "maintainer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/alolastmoment"
+        }
+    ],
+    "section": "Widgets",
+    "works_min": "9.0",
+    "works_max": "14.3",
+    "featured": "true",
+    "changelog": [
+      {
+          "version": "1.0",
+          "changes": "\t\n\u2022 Initial Release"
+      }
+    ]
+}

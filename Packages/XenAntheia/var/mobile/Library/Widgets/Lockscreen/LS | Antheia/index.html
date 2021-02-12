@@ -1,0 +1,103 @@
+<html><head>
+<title>HSL HS4 (Weather)</title>
+<!-- Credits: Original code by Dacal & Junesiphone. Modified by Evelyn. -->
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="Style.css" type="text/css" media="screen"/>
+<script type="text/javascript" charset="utf-8" src="Config.js"></script>
+<script type="text/javascript" charset="utf-8" src="Scripts/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="Scripts/main.js"></script>
+<script type="text/javascript" charset="utf-8" src="Scripts/lang.js"></script>
+</head>
+
+<body onload="init()">
+
+<div id="Widget">
+
+
+<div id="Clock">
+    <a id="hour"></a>:<a id="minute"></a><a id="ampm" style="display:none;"></a>
+</div>
+
+
+
+<div id="R3"></div>
+<div id="R4"></div>
+
+<div id="Cal">
+    <a id="weekday"></a>, <a id="month"></a> <a id="date"></a>
+</div>
+
+<div id="R5"></div>
+<div id="R6"></div>
+
+<div id="R7"></div>
+
+<div id="R8"></div>
+<div id="R9"></div>
+
+<div id="BatteryLevel">
+    <a id="StateDisplay">battstate</a> <a id="LevelDisplay">__%</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+
+var sheet = document.createElement('style')
+sheet.innerHTML = "#R3,#R4{background-color:"+dotsColor2+";}";
+document.body.appendChild(sheet);
+
+var sheet = document.createElement('style')
+sheet.innerHTML = "#R5,#R6{background-color:"+dotsColor3+";}";
+document.body.appendChild(sheet);
+
+var sheet = document.createElement('style')
+sheet.innerHTML = "#R8,#R9{background-color:"+dotsColor4+";}";
+document.body.appendChild(sheet);
+
+function mainUpdate(type){
+    if(type == "weather"){
+      document.getElementById('temp').innerHTML = weather.temperature + "&deg;" + weather.celsius;
+      document.getElementById('desc').innerHTML = weatherdesc[weather.conditionCode];
+      document.getElementById('city').innerHTML = weather.city;
+      document.getElementById('country').innerHTML = weather.address.country; 
+
+document.getElementById('hightemp').innerHTML = weather.high + "&deg;" + weather.celsius;
+      document.getElementById('lowtemp').innerHTML = weather.low + "&deg;" + weather.celsius;
+    }
+    if(type == "battery"){
+      document.getElementById('LevelDisplay').innerHTML = batteryPercent + "%";
+      document.getElementById('StateDisplay').innerHTML = (batteryCharging) ? "Charging" : "Unplugged";
+    }
+}
+</script>
+
+<script>
+(function(){
+    'use strict';
+    if (window.innerWidth === 320) {
+        document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale=0.85, maximum-scale=0.85, user-scalable=0');
+    } else if (window.innerWidth === 414) {
+        document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale=1.104, maximum-scale=1.104, user-scalable=0');
+    } else if (window.innerWidth === 425) {
+        document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale=1.133, maximum-scale=1.133, user-scalable=0');
+    } else if (window.innerWidth === 432) {
+        document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale=1.152, maximum-scale=1.152, user-scalable=0');
+    }
+}());
+(function(){
+    'use strict';
+    if (window.innerHeight === 812) {
+        document.getElementById("Widget").style.top = "50px";
+    } else {
+        document.getElementById("Widget").style.top = "0px";
+    }
+}());
+</script>
+</body></html>
