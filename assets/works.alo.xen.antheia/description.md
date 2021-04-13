@@ -1,4 +1,4 @@
-Antheia XenHTML Widgets
+Antheia XenHTML Widgets (by HSL)
 -----------------------------------
 
 This package contains 2 widgets:

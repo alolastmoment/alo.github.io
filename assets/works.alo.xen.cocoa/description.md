@@ -1,4 +1,4 @@
-# HS | Cocoa
+# HS | Cocoa (by HSL)
 
 This widget is an iOS rendition of [mocacocoa’s kwlp](https://twitter.com/mocacocoa_theme/status/1335903782895374337) with some added features. Special thanks to [Kenny](https://twitter.com/_kennyroo?s=21), [HNDRK](https://twitter.com/paolopizzaiola?s=21), & [Paras](https://twitter.com/paraskcd?s=21) for helping me put this together.
 
