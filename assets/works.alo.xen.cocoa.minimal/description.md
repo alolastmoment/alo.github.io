@@ -2,7 +2,7 @@
 
 This is the minimal version of [HS | Cocoa](https://alo.works/depiction/web/works.alo.xen.cocoa.html)
 
-#### Xen HTML ver. 2.0~beta8 or higher (ver 2.0~release) is required. Get it from https://xenpublic.incendo.ws/
+#### Xen HTML ver. 2.0~beta8 or higher (ver 2.0~release) is required. Get it from https://xenpublic.incendo.ws/ or from Packix repo.
 
 
 ### **Options**
@@ -13,6 +13,7 @@ You can configure the following options:
 - Card height, width, and radius
 - Blur intensity
 - Hide certain elements (date, battery, clock)
+- Enable/Disable Weather
 
 
 #### Note
