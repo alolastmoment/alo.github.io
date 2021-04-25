@@ -4,7 +4,7 @@ LS | Ceres
 
 An elegant and beautiful lockscreen widget that shows you the time and weather quickly at a glance. Features a colored battery bill designed to know the battery state easily.
 
-Original Android design is by [jacksonhayes701](jacksonhayes701). Major thanks to them for letting me replicate it for XenHTML.
+Original Android design is by [jacksonhayes701](https://twitter.com/jacksonhayes701). Major thanks to them for letting me replicate it for XenHTML.
 
 ### Requires the latest XenHTML from [https://xenpublic.incendo.ws](https://xenpublic.incendo.ws), or from Packix.
 
