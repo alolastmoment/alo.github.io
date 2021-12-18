@@ -5,8 +5,8 @@ Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
-Description: Themes, themes... and more themes
+Description: Themes, themes and more themes
 
 SHA256:
- d290ebea9e66809c9af6e262389824d8408562e09bfe5468e6dc29d0a797057e 6375 Packages.bz2
- 31de14e85909238c134d5bf1a8051a3d24268ec7e3b56f50195752563fcddf4a 6488 Packages.xz
+ 5bd5187afdb0830bdf7ec995264a242b077e74ca007041c67287fff96c93db55 6394 Packages.bz2
+ fee14318c5bd736f19870c3f59b10ca0260001bf4b2c10886e1bfc18ee0c84cf 6492 Packages.xz
