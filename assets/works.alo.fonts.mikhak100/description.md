@@ -15,7 +15,8 @@ For jailbroken devices, you will need **Snowboard** theme engine and **Snowboard
 The font will be installed in /Library/Themes.
 
 
-#####Non-Jailbroken Devices
+Non-Jailbroken Devices
+-------------------------
 
 For non-jailbroken devices on iOS 15 - 16.1.2, the font can be downloaded from the following link: **[CLICK HERE](https://drive.google.com/drive/folders/1lT6I9i3ltzdfs3YcHYEv8bJr0ejJD8IT)**
 
