@@ -1,1448 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=0">
   <title>Alo&#x27;s Repo</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="web/index.css">
 
-  <style>
-    a,
-    .tint {
-      color: {
-          {
-          tint_color
-        }
-      }
-    }
 
-    .active {
-      color: {
-          {
-          tint_color
-        }
-      }
-  </style>
   <script src="https://kit.fontawesome.com/dda4af39da.js" crossorigin="anonymous"></script>
-  <meta name="description" content="Themes, WWidgets, and more Themes">
+  <meta name="description" content="Themes, Widgets, and more Themes">
   <meta property="og:title" content="Alo&#x27;s Repo">
-  <meta property="og:description" content="Themes, WWidgets, and more Themes">
+  <meta property="og:description" content="Themes, Widgets, and more Themes">
   <meta property="og:image" content="https://alo.works/CydiaIcon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Alo&#x27;s Repo">
-  <meta name="twitter:description" content="Themes, WWidgets, and more Themes">
+  <meta name="twitter:description" content="Themes, Widgets, and more Themes">
   <meta name="twitter:image" content="https://alo.works/CydiaIcon.png">
   <meta name="theme-color" content="#677E94">
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-  <script
-    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-    crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sono:wght@400;500;600;700&display=swap');
+  </style>
+
+
 </head>
 
-<body>
-  <div class="body" id="bodyDiv">
+<body class="lightMode d-flex flex-column h-100 indexBody">
+
+  <div class="container-fluid">
 
     <div class="row">
-      <div class="col-12 text-center">
-        <img style="width:50px;height:50px;" src="./CydiaIcon.png"><br />
-        <h1 class="header">Alo&#x27;s Repo</h1>
-      </div>
+      <div class="col-12">
+        <div id="mainNavigation">
+          <nav role="navigation">
+            <div id="mainNav" class="py-3 text-center d-flex align-items-center justify-content-center">
+              <span class="headerCircle circle1"></span>
+              <span class="headerCircle circle2"></span>
 
-    </div>
-    <div class="row">
-      <div class="col-12 text-center">
-        <p>If you find youself appreciating my works, please consider supporting me <a
-            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BBSCydia%40gmail%2ecom&amp;lc=QA&amp;item_name=WorksByBBS%20Repo%20Donation&amp;no_note=0&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest">
-            via PayPal <i class="fab fa-paypal"></i></p>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-3 col-6 text-center">
-        <a class="pkg-button zebra" href="zbra://sources/add/https://alo.works">Zebra</a>
-      </div>
-      <div class="col-md-3 col-6 text-center">
-        <a class="pkg-button installer" href="installer://add/https://alo.works">Installer</a>
-      </div>
-      <div class="col-md-3 col-6 text-center">
-        <a class="pkg-button sileo" href="sileo://source/https://alo.works">Sileo</a>
-      </div>
-      <div class="col-md-3 col-6 text-center">
-        <a class="pkg-button cydia" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://alo.works">Cydia</a>
-      </div>
-    </div>
+              <img src="./CydiaIcon.png" id="repo_logo" alt="repo_logo" width="30" height="30"
+                class="d-inline-block align-text-top">
+              <span class="headerCircle circle3"></span>
+              <span class="headerCircle circle4"></span>
 
-    <h2 class="header"><i class="fas fa-shapes"></i></h2>
-    <div id="filterList">
-      <div class="row text-center">
-        <div class="col-12">
-          <label id="pkgSelectLabel" for="pkgSelect">Filter Packages: </label>
-          <select id="pkgSelect" name="pkgSelect" onchange="filterPkg()">
-            <option value="all" onclick="filterPkg(this.id)" selected>All</option>
-            <option value="Fonts (iOS 14-16)" onclick="filterPkg(this.id)">Fonts (iOS 14-16)</option>
-            <option value="Themes (Icons)" onclick="filterPkg(this.id)">Icons</option>
-            <option value="Themes (Control Center)" onclick="filterPkg(this.id)">Control Center</option>
-            <option value="Themes (Music Controls)" onclick="filterPkg(this.id)">Music Controls</option>
-            <option value="Themes (Settings)" onclick="filterPkg(this.id)">Settings</option>
-            <option value="Themes (NiceBarX)" onclick="filterPkg(this.id)">NiceBarX</option>
-            <option value="Themes (Laetus)" onclick="filterPkg(this.id)">Laetus</option>
-            <option value="Themes (Juice)" onclick="filterPkg(this.id)">Juice</option>
-            <option value="Widgets" onclick="filterPkg(this.id)">Widgets</option>
-            <option value="Kaleidoscope" onclick="filterPkg(this.id)">Kaleidoscope</option>
+              <a href="#">
+                <div class="darkModeIcon"></div>
+              </a>
 
-          </select>
+            </div>
+          </nav>
+          <div class="navbar-expand-md">
+
+            <div class="text-center mt-3" id="navbarNavDropdown">
+              <ul class="navbar-nav navbar-nav d-flex align-items-center justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#" data-target="#HomeDiv">Home</a>
+                </li>
+
+                <!--<li class="nav-item">
+                  <a class="nav-link" href="#" data-target="#SetupsDiv">Setups</a>
+                </li>-->
+              </ul>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
-    <div class="packageList">
+
+
+
+
+    <div id="HomeDiv" class="dataDivs">
       <div class="row">
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.linealcc.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.linealcc/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Lineal CC</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Control Center)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.4</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.mars.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.mars/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Mars)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.cocoa.minimal.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.cocoa.minimal/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">HS | Cocoa Minimal (by HSL and Jazzy)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.4</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.flatmusiccontrols11.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.flatmusiccontrols11/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Flat Music Controls</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Music Controls)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.pulsar.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.pulsar/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Pulsar)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.emerald.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.emerald/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Emerald)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.amethyst-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.amethyst-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Amethyst)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.lunar-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.lunar-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Lunar)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.iridescent.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.iridescent/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Iridescent</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Kaleidoscope</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 4.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.kelmacc.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.kelmacc/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Kelma CC</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Control Center)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.cocoa.puffs.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.cocoa.puffs/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">HS | Cocoa Puffs (by HSL)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.greendotssettings.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.greendotssettings/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Green Dots Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.compacticonswhite-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.compacticonswhite-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Compacticons White for iOS</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Icons)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.pulsar-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.pulsar-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Pulsar)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.fonts.mikhak85.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.fonts.mikhak85/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Mikhak Font (85%)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alexman</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Fonts (iOS 14-16)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.whitedotssettings.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.whitedotssettings/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">White Dots Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.yellowdotssettings.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.yellowdotssettings/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Yellow Dots Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.neptune.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.neptune/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Neptune)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.fonts.meloso80.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.fonts.meloso80/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Meloso Font (80%)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alexman</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Fonts (iOS 14-16)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.hsl.laetus3.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.hsl.laetus3/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">HSL Laetus 3</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> happysolucki</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Laetus)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0.3</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.cocoa.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.cocoa/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">HS | Cocoa (by HSL)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 2.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.blurbox.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.blurbox/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Blur Box Widget</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.antheia.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.antheia/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Antheia Widgets (by HSL)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 2.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.linealmusiccontrols.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.linealmusiccontrols/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Lineal Music Controls</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Music Controls)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.citrine-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.citrine-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Citrine)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.nicebarxflat.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.nicebarxflat/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Flat Icons for NiceBarX</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (NiceBarX)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.celestine.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.celestine/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Celestine)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.emerald-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.emerald-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Emerald)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.sunstone-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.sunstone-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Sunstone)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.neptune-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.neptune-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Neptune)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.ls.cotton.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.ls.cotton/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">LS | Cotton</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.fonts.meloso100.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.fonts.meloso100/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Meloso Font (100%)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alexman</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Fonts (iOS 14-16)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.doublebubble-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.doublebubble-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Double Bubble Settings (by Roo)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.compacticonswhite.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.compacticonswhite/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Compacticons White for iOS</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Icons)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.laetus.1.purple.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.laetus.1.purple/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Alo - Purple (Laetus #1)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Laetus)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.lunar.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.lunar/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Lunar)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.ls.ceres.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.ls.ceres/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">LS | Ceres</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.sunstone.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.sunstone/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Sunstone)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.greendotssettings-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.greendotssettings-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Green Dots Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.ls.macindows.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.ls.macindows/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">LS | Macindows (by HSL)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.yellowdotssettings-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.yellowdotssettings-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Yellow Dots Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.fonts.mikhak100.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.fonts.mikhak100/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Mikhak Font (100%)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alexman</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Fonts (iOS 14-16)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.laetus.mirage.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.laetus.mirage/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Mirage Laetus Theme</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Laetus)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.sapphire.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.sapphire/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Sapphire)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.doublebubble.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.doublebubble/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Double Bubble Settings (by Roo)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.hsl.laetus.twixy.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.hsl.laetus.twixy/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">HSL Laetus Theme - Twixy</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> happysolucki</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Laetus)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.muses.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.muses/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Muses</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.ls.helios.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.ls.helios/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">LS | Helios</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.laetus.1.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.laetus.1/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Alo - Blue (Laetus #1)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Laetus)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.fonts.meloso85.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.fonts.meloso85/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Meloso Font (85%)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alexman</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Fonts (iOS 14-16)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.sapphire-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.sapphire-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Sapphire)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.ruby-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.ruby-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Ruby)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.nicebarxlineal.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.nicebarxlineal/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Lineal Icons for NiceBarX</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (NiceBarX)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.duo.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.duo/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Duo Widgets</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.compacticons.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.compacticons/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Compacticons for iOS</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Icons)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.juice.sye17.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.juice.sye17/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Alo-Sye17 Juice Battery Theme</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Juice)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.ruby.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.ruby/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Ruby)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.amethyst.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.amethyst/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Amethyst)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.celestine-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.celestine-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Celestine)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.moonstones.mars-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.moonstones.mars-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Moonstones Settings (Mars)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> KennyRoo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.quartzsettings.citrine.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.quartzsettings.citrine/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Quartz Settings (Citrine)</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> HSL</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/works.alo.xen.ls.aegean.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/works.alo.xen.ls.aegean/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">LS | Aegean Clock</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Widgets</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.0</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.compacticons-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.compacticons-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">Compacticons for iOS</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Icons)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.1</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-3 col-12 packageListItem">
-            <a class="subtle_link" href="depiction/web/io.github.worksbybbs.whitedotssettings-rootless.html">
-              <div class="package-card">
-                <div class="row">
-                  <div class="col">
-
-                    <img class="img-fluid" src="assets/io.github.worksbybbs.whitedotssettings-rootless/banner.png">
-
-                    <div class="package-card-title">
-                      <p class="title">White Dots Settings</p>
-                      <p class="developer"><i class="fas fa-user" style="color:#d5d5d5"></i> Alo</p>
-                      <p class="developer"><i class="fas fa-stream" style="color:#d5d5d5"></i> Themes (Settings)</p>
-                      <p class="developer"><i class="fas fa-code-branch" style="color:#d5d5d5"></i> 1.2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+        <div class="col-12 text-center">
+          <h1 class="header">Alo&#x27;s Repo</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>Welcome to my repo!</p>
+          <p>This is where I host all of my themes, widgets etc. To download any of my packages, add the repo to your
+            preferred package manager below:</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-2 col-6 text-center">
+          <a class="pkg-button zebra" href="zbra://sources/add/https://alo.works" target="_blank">Zebra</a>
+        </div>
+        <div class="col-md-2 col-6 text-center">
+          <a class="pkg-button installer" href="installer://add/https://alo.works" target="_blank">Installer</a>
+        </div>
+        <div class="col-md-2 col-6 text-center">
+          <a class="pkg-button sileo" href="sileo://source/https://alo.works" target="_blank">Sileo</a>
+        </div>
+        <div class="col-md-2 col-6 text-center">
+          <a class="pkg-button cydia"
+            href="cydia://url/https://cydia.saurik.com/api/share#?source=https://alo.works" target="_blank">Cydia</a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <br />
+          <p>If you find yourself appreciating my work, please consider supporting me
+        </div>
+        <div class="col-xl-4 col-md-6 col-12 text-center">
+          <a class="pkg-button paypal"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BBSCydia%40gmail%2ecom&amp;lc=QA&amp;item_name=Alo%20Repo%20Donation&amp;no_note=0&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest" target="_blank"><img
+              alt="svgImg" class="pkg_svg_icons"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA2NCA2NCI+CjxwYXRoIGQ9Ik0gMjEuMTkzMzU5IDEwIEMgMTcuOTk5MzU5IDkuOTk4IDE2Ljc5MDY4NyAxMS42NjY4OTEgMTYuMzA0Njg4IDEzLjk2Mjg5MSBDIDE0Ljg3MzY4OCAyMC43MTI4OTEgMTAuNTc2MTcyIDQwLjk2Mjg5MSAxMC41NzYxNzIgNDAuOTYyODkxIEMgMTAuMDAwMTcyIDQyLjk5OTg5MSAxMC45OTk3OTcgNDcgMTUuNDY2Nzk3IDQ3IEwgMTkuMzAyNzM0IDQ3IEwgMTguODE2NDA2IDQ5LjE1NjI1IEMgMTcuOTk5NDA2IDUxLjk5OTI1IDIwLjAwMDEyNSA1NSAyMy43MDMxMjUgNTUgTCAyOC40OTYwOTQgNTUgQyAzMC44NTIwOTQgNTUgMzIuODgzODEzIDUzLjQxNTkzNyAzMy4zODI4MTIgNTEuMjEwOTM4IEwgMzQuOTY0ODQ0IDQ2LjM4MDg1OSBDIDM1LjAzMjg0NCA0Ni4wMjU4NTkgMzUuOTI2IDQ1IDM3IDQ1IEwgNDIgNDUgQyA0NS41MjIgNDUgNDguODMyMzEyIDQzLjYxMDg0NCA1MS4zMjAzMTIgNDEuMDg5ODQ0IEMgNTMuNzM1MzEyIDM4LjY0Mjg0NCA1NS4wNDEwNDcgMzUuNDcwMjAzIDU0Ljk5ODA0NyAzMi4xNTgyMDMgQyA1NC45MjQ3MjggMjYuNTU1OTUyIDUxLjg1NjUyNyAyMS4zNzIyNjcgNDYuNDcyNjU2IDIwLjI0NjA5NCBDIDQ1LjM2NDkwMyAxNC42NDQ1NDYgNDEuMjE4ODEyIDEwLjAwMTQ5OCAzNi4wMDM5MDYgMTAuMDEzNjcyIEMgMzYuMDAzOTA2IDEwLjAxMzY3MiAyNC44OTUzNTkgMTAuMDAyIDIxLjE5MzM1OSAxMCB6IE0gMjEuMTkzMzU5IDE0IEwgMzUuNjM2NzE5IDE0IEMgMzkuMDY5OTQyIDE0IDQxLjM5NTcyMSAxNi42NDMzNzUgNDIuMzIwMzEyIDIwLjAxMTcxOSBMIDI5LjQzMTY0MSAyMCBDIDI3LjA5NjY0MSAyMCAyNS4wNDA5MjIgMjEuNTk0OTY5IDI0LjU0NDkyMiAyMy43OTI5NjkgTCAyMC4yMDcwMzEgNDMgTCAxNS40NjY3OTcgNDMgQyAxNS4wNTE3OTcgNDMgMTQuMDkwMzI4IDQyLjk0OTk2OSAxNC40ODYzMjggNDEuNzkyOTY5IEwgMjAuMjE0ODQ0IDE0Ljc5Mjk2OSBDIDIwLjMxMjg0NCAxNC4zMzM5NjkgMjAuNzIzMzU5IDE0IDIxLjE5MzM1OSAxNCB6IE0gMjkuNDMxNjQxIDI0IEwgNDIuNzIwNzAzIDI0IEMgNDIuMTIwNDAyIDI5LjM2OTM2OCAzNS44MDA2NzQgMzIgMzMuNDgwNDY5IDMyIEwgMjYuNzkyOTY5IDMyIEwgMjguNDQ3MjY2IDI0LjY3MzgyOCBDIDI4LjUzNDI2NiAyNC4yODk4MjggMjguOTU3NjQxIDI0IDI5LjQzMTY0MSAyNCB6IE0gNDYuNjY2MDE2IDI0LjY0ODQzOCBDIDQ5LjI2NDg2NyAyNS45MjczMTkgNTAuOTU0OTkgMjguOTM5MzQ5IDUwLjk5ODA0NyAzMi4yMTA5MzggQyA1MS4wMjgwNDcgMzQuNDQ1OTM3IDUwLjEzMTYwOSAzNi42MDAyOTcgNDguNDc0NjA5IDM4LjI3OTI5NyBDIDQ2Ljc0MjYwOSA0MC4wMzMyOTcgNDQuNDQ0IDQxIDQyIDQxIEwgMzcgNDEgQyAzNC4wMzUgNDEgMzEuNTc5MzU5IDQzLjI4NTY1NiAzMS4wNjgzNTkgNDUuNDcyNjU2IEwgMjkuNDg0Mzc1IDUwLjMwNDY4OCBDIDI5LjQwODM3NSA1MC43MDA2ODcgMjguOTgzMDk0IDUxIDI4LjQ5NjA5NCA1MSBMIDIzLjcwMzEyNSA1MSBDIDIzLjAwMDEyNSA1MSAyMi42NjE3MDMgNTAuMjk3MTA5IDIyLjcyMDcwMyA1MC4wMzcxMDkgTCAyNS44OTA2MjUgMzYgTCAzMy40ODA0NjkgMzYgQyAzNi43NzUzMzUgMzYgNDUuNjQzOTQgMzIuNTMxOTExIDQ2LjY2NjAxNiAyNC42NDg0MzggeiI+PC9wYXRoPgo8L3N2Zz4=" />
+            Buy me a coffee via PayPal</a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <br />
+          <p>If you ever need to contact me, you may do so through the following platforms:
+        </div>
+        <div class="col-md-3 col-12 text-center">
+          <a class="pkg-button installer"
+            href="https://twitter.com/alolastmoment" target="_blank"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGQ9Ik0gMTYgMy45OTgwNDY5IEMgMTMuMDgwODYxIDMuOTk4MDQ2OSAxMC4xNjEwMDQgNC4zNDQ3NjkzIDcuMjQ4MDQ2OSA1LjAzNzEwOTQgQyA2LjE1MDcwMTEgNS4yOTY4OTA0IDUuMjk2MjY0OSA2LjE1MjQwMDIgNS4wMzcxMDk0IDcuMjUgQyAzLjY1Mjg3ODcgMTMuMDc1Mjg5IDMuNjUyNTc5IDE4LjkyNjY3IDUuMDM3MTA5NCAyNC43NTE5NTMgQyA1LjI5Njc1NDEgMjUuODQ4NzIzIDYuMTUxMjc2OSAyNi43MDMyNDYgNy4yNDgwNDY5IDI2Ljk2Mjg5MSBDIDEzLjA3Mzk2MSAyOC4zNDc1NzEgMTguOTI2MDM5IDI4LjM0NzU3MSAyNC43NTE5NTMgMjYuOTYyODkxIEMgMjUuODQ4NzIzIDI2LjcwMzI0NiAyNi43MDMyNDYgMjUuODQ4NzIzIDI2Ljk2Mjg5MSAyNC43NTE5NTMgTCAyNi45NjI4OTEgMjQuNzUgQyAyOC4zNDY5NzEgMTguOTI1MzQyIDI4LjM0Njk3MSAxMy4wNzQ2NTggMjYuOTYyODkxIDcuMjUgTCAyNi45NjI4OTEgNy4yNDgwNDY5IEMgMjYuNzAzMjQ2IDYuMTUxMjczOCAyNS44NDg3MjMgNS4yOTY3NTQxIDI0Ljc1MTk1MyA1LjAzNzEwOTQgQyAyMS44Mzg5OTYgNC4zNDQ3NjkzIDE4LjkxOTEzOSAzLjk5ODA0NjkgMTYgMy45OTgwNDY5IHogTSAxNiA1Ljk5NjA5MzggQyAxOC43NjA4NjEgNS45OTYwOTM2IDIxLjUyMjAxOSA2LjMyNDc2MiAyNC4yODkwNjIgNi45ODI0MjE5IEwgMjQuMjkxMDE2IDYuOTgyNDIxOSBDIDI0LjYzMjg0IDcuMDYzMTMwOSAyNC45MzY4NyA3LjM2NzE2MDIgMjUuMDE3NTc4IDcuNzA4OTg0NCBMIDI1LjAxNzU3OCA3LjcxMDkzNzUgQyAyNi4zMzI4OTggMTMuMjQ1MDI0IDI2LjMzMjg5OCAxOC43NTQ5NzYgMjUuMDE3NTc4IDI0LjI4OTA2MiBMIDI1LjAxNzU3OCAyNC4yOTEwMTYgQyAyNC45MzY4NjggMjQuNjMyODQgMjQuNjMyODQgMjQuOTM2ODcgMjQuMjkxMDE2IDI1LjAxNzU3OCBMIDI0LjI4OTA2MiAyNS4wMTc1NzggQyAxOC43NTQ5NzYgMjYuMzMyODk4IDEzLjI0NTAyNCAyNi4zMzI4OTggNy43MTA5Mzc1IDI1LjAxNzU3OCBMIDcuNzA4OTg0NCAyNS4wMTc1NzggQyA3LjM2NzE1NzEgMjQuOTM2ODI3IDcuMDYzMTMwNCAyNC42MzI4NCA2Ljk4MjQyMTkgMjQuMjkxMDE2IEwgNi45ODI0MjE5IDI0LjI4OTA2MiBDIDUuNjY3MTAyMSAxOC43NTQ5NzcgNS42NjcxMDIxIDEzLjI0NTAyNCA2Ljk4MjQyMTkgNy43MTA5Mzc1IEwgNi45ODI0MjE5IDcuNzA4OTg0NCBDIDcuMDYzMTMwNCA3LjM2NzIwMzEgNy4zNjcxNjAyIDcuMDYzMTMwNCA3LjcwODk4NDQgNi45ODI0MjE5IEwgNy43MTA5Mzc1IDYuOTgyNDIxOSBDIDEwLjQ3Nzk4NCA2LjMyNDc2MiAxMy4yMzkxMzkgNS45OTYwOTM4IDE2IDUuOTk2MDkzOCB6IE0gMTkuOTU1MDc4IDExLjA0NDkyMiBBIDAuOTQ1MDk0NDkgMC45NDUwOTQ0OSAwIDAgMCAxOS4yNTM5MDYgMTEuNDIxODc1IEMgMTguNTE5NjkgMTIuMzY5MjUxIDE3Ljc0NTk1NCAxMy4xNzY3MzcgMTYuOTY4NzUgMTMuOTY2Nzk3IEMgMTYuMTYzMjkzIDEzLjA2MTM1OSAxNS4yMzA5NyAxMi4wNjMxOSAxNC43NTU4NTkgMTEuNDMxNjQxIEEgMC45NDUwOTQ0OSAwLjk0NTA5NDQ5IDAgMCAwIDE0IDExLjA1NDY4OCBMIDEwIDExLjA1NDY4OCBBIDAuOTQ1MDk0NDkgMC45NDUwOTQ0OSAwIDAgMCA5LjI3MzQzNzUgMTIuNjA1NDY5IEMgMTAuODU0ODE4IDE0LjUwMDg4MiAxMS45NDYzODMgMTUuOTI2MzUgMTMuMTI1IDE3LjMyNDIxOSBDIDEyLjI1ODY1NCAxNy45NzE5OTQgMTEuMzgzNzcxIDE4LjYwNDAxMSAxMC40NzI2NTYgMTkuMjE2Nzk3IEEgMC45NDUwOTQ0OSAwLjk0NTA5NDQ5IDAgMSAwIDExLjUyNzM0NCAyMC43ODMyMDMgQyAxMi41MTE0NiAyMC4xMjEzMTkgMTMuNDgyODc3IDE5LjQyNjY0NSAxNC40NDUzMTIgMTguNjk5MjE5IEMgMTUuMDYwNzgzIDE5LjM1MTc1NyAxNS41MTQ2NzIgMTkuOTQyOTQxIDE2LjM3MTA5NCAyMC43MDUwNzggQSAwLjk0NTA5NDQ5IDAuOTQ1MDk0NDkgMCAwIDAgMTcgMjAuOTQ1MzEyIEwgMjIgMjAuOTQ1MzEyIEEgMC45NDUwOTQ0OSAwLjk0NTA5NDQ5IDAgMCAwIDIyLjQ4MDQ2OSAxOS4xODc1IEMgMjEuMzY2ODg3IDE4LjUyODQ0MSAxOS43NTc4NjEgMTcuMDA5ODEgMTguMjE2Nzk3IDE1LjM5NjQ4NCBDIDE5LjA3NjMzMiAxNC41MzAyNjUgMTkuOTMxMjA5IDEzLjYyOTU4OSAyMC43NDYwOTQgMTIuNTc4MTI1IEEgMC45NDUwOTQ0OSAwLjk0NTA5NDQ5IDAgMCAwIDE5Ljk1NTA3OCAxMS4wNDQ5MjIgeiBNIDExLjk2Mjg5MSAxMi45NDUzMTIgTCAxMy41NjY0MDYgMTIuOTQ1MzEyIEMgMTQuOTQxODI0IDE0LjcyODYyOCAxNy4yMTcxMDMgMTcuMTQyMzM0IDE5LjQ2Njc5NyAxOS4wNTQ2ODggTCAxNy4zOTg0MzggMTkuMDU0Njg4IEMgMTUuMDEzMzcyIDE2Ljg4ODg4IDEzLjcyOTU0NiAxNS4xODEyNzMgMTEuOTYyODkxIDEyLjk0NTMxMiB6Ij48L3BhdGg+Cjwvc3ZnPg=="/>
+            X / Twitter</a>
+        </div>
+        <div class="col-md-3 col-12 text-center">
+          <a class="pkg-button reddit"
+            href="https://www.reddit.com/user/b1gbangseungri" target="_blank"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTE2LDEyYy0yLjg1LDAtNS4yNDgsMC40NTItOCwxLjg3NWMtMi4xNy0xLjU1OS01LTAuMTk4LTUsMi4xOTZDMywxNy4zOTksMy41OTMsMTguNDA1LDUsMTljLTAuNSw1LDQsOCwxMSw4czExLjUtMywxMS04IGMxLjQwNy0wLjU5NSwyLTEuNjAxLDItMi45MjljMC0yLjM5NC0yLjgzLTMuNzU2LTUtMi4xOTZDMjEuMjQ4LDEyLjQ1MiwxOC44NSwxMiwxNiwxMnoiPjwvcGF0aD48Y2lyY2xlIGN4PSIyNCIgY3k9IjciIHI9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiI+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMTEuNSIgY3k9IjE4LjUiIHI9IjEuNSI+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAuNSIgY3k9IjE4LjUiIHI9IjEuNSI+PC9jaXJjbGU+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMjIsNiBjLTEuMjg2LTAuNjYxLTIuNzU5LTAuODQxLTQuMjE0LTAuNTUzQzE2LjI3Nyw3LjEsMTUuNzAzLDkuNDE3LDE2LDEyIj48L3BhdGg+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMTMsMjIuNWMyLDAuNjY3LDQsMC42NjcsNiwwIj48L3BhdGg+Cjwvc3ZnPg=="/>
+            Reddit</a>
+        </div>
+        <div class="col-md-3 col-12 text-center">
+          <a class="pkg-button zebra "
+            href="mailto:bbscydia@gmail.com" target="_blank"><img alt="svgImg" class="pkg_svg_icons"src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGQ9Ik0gMTYgNSBDIDEyLjcxNDYzNiA1IDkuNDI4OTQ3MyA1LjI5ODg0OTggNi4xNDY0ODQ0IDUuODk4NDM3NSBDIDQuNzMyNzIxMyA2LjE1NzA5NzkgMy42MDg4MTQ1IDcuMTc4MTMzOSAzLjEzODY3MTkgOC41MDE5NTMxIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAzLjAxNTYyNSA4Ljg3Njk1MzEgQyAxLjY1NTc4NDcgMTMuNjYyNDM2IDEuNjY1Njc0OSAxOC40ODg4MzIgMy4wNTQ2ODc1IDIzLjI3MzQzOCBDIDMuMjQ2NjExIDIzLjkzNjI3OCAzLjYwNzM5MDMgMjQuNTI2MjAyIDQuMDgyMDMxMiAyNS4wMDE5NTMgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDQuNTg1OTM3NSAyNS40MzU1NDcgQyA1LjA0MjkyODEgMjUuNzYxNDAzIDUuNTcwODk2NSAyNS45OTQzOTUgNi4xNDY0ODQ0IDI2LjA5OTYwOSBMIDYuMTQ4NDM3NSAyNi4wOTk2MDkgQyAxMi43MTI3MiAyNy4yOTg0MzEgMTkuMjg5MjM1IDI3LjI5ODY2NyAyNS44NTM1MTYgMjYuMDk5NjA5IEMgMjYuNDMyMDAzIDI1Ljk5NDA1IDI2Ljk2MTU0NCAyNS43NTgxNTIgMjcuNDE5OTIyIDI1LjQyOTY4OCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjcuOTE3OTY5IDI1IEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAyNy45MjE4NzUgMjQuOTk0MTQxIEMgMjguMzkzMDk3IDI0LjUxOTQxNiAyOC43NTM2OCAyMy45MzMxNjYgMjguOTQ1MzEyIDIzLjI3MzQzOCBDIDMwLjM0OTA2NiAxOC40MzgwNTYgMzAuMzQ5MDY3IDEzLjU1OTk5MSAyOC45NDUzMTIgOC43MjQ2MDk0IEMgMjguOTQzMTcgOC43MTcyMzIgMjguOTM5NjgzIDguNzEwNDg1NyAyOC45Mzc1IDguNzAzMTI1IEEgMS4wMDAxMjAzIDEuMDAwMTIwMyAwIDAgMCAyOC45MDIzNDQgOC42MDkzNzUgQyAyOC40NTY1MDIgNy4yMzIyNjUxIDI3LjMwNjUxNyA2LjE2MzU3NDMgMjUuODUzNTE2IDUuODk4NDM3NSBDIDIyLjU3MTA1MyA1LjI5ODg0OTggMTkuMjg1MzY0IDUgMTYgNSB6IE0gMTYgNyBDIDE5LjE2MzYzNiA3IDIyLjMyNzYwNCA3LjI4ODc3NTIgMjUuNDk0MTQxIDcuODY3MTg3NSBDIDI2LjA4OTcwNyA3Ljk3NTg2MzYgMjYuNTg5ODUyIDguMzg0MzM4IDI2Ljg2OTE0MSA4LjkzMTY0MDYgQyAyNS4xOTc4MzggMTEuODUxMDk2IDIyLjY1NTE2OCAxNC4zODEzNDIgMjAuMzg2NzE5IDE2LjE3MTg3NSBDIDE5LjIwMDM3OSAxNy4xMDgyNzcgMTguMDkyNDkyIDE3Ljg0NTA2OCAxNy4yNDgwNDcgMTguMzM3ODkxIEMgMTYuODI1ODI1IDE4LjU4NDMwMiAxNi40Njc1NDcgMTguNzcxMDMxIDE2LjIxNDg0NCAxOC44ODQ3NjYgQyAxNi4xMjk2NjggMTguOTIzMTAxIDE2LjA2NjQ2NCAxOC45MzQwOTggMTYgMTguOTUxMTcyIEMgMTUuOTMzNTM2IDE4LjkzNDA5OCAxNS44NzAzMzIgMTguOTIzMTAxIDE1Ljc4NTE1NiAxOC44ODQ3NjYgQyAxNS41MzI0NTMgMTguNzcxMDMxIDE1LjE3NDE3NSAxOC41ODQzMDIgMTQuNzUxOTUzIDE4LjMzNzg5MSBDIDEzLjkwNzUwOCAxNy44NDUwNjggMTIuNzk5NjIxIDE3LjEwODI3NyAxMS42MTMyODEgMTYuMTcxODc1IEMgOS4zNDU0MzI5IDE0LjM4MTgxNiA2LjgwNDEzODYgMTEuODUyMDY3IDUuMTMyODEyNSA4LjkzMzU5MzggQyA1LjQxMTQ1NzEgOC4zODU0Nzc1IDUuOTA5NzE2OCA3Ljk3NTk2ODcgNi41MDU4NTk0IDcuODY3MTg3NSBDIDkuNjcyMzk2NCA3LjI4ODc3NTIgMTIuODM2MzY0IDcgMTYgNyB6IE0gMjcuNTYyNSAxMS41NjI1IEMgMjguMjQ4MzI5IDE1LjEyNDg2NCAyOC4xMDk4NzIgMTguNjY4NDI3IDI3LjE0NjQ4NCAyMi4yMzgyODEgQyAyNi4wNjAwMDIgMjAuMDQ5MDA3IDI0LjY1NDg3OSAxOC4xNTY0MjMgMjMuMDI3MzQ0IDE2LjQ0MTQwNiBDIDI0LjYwNTUwMSAxNS4wNTUzNDYgMjYuMjE1Njc4IDEzLjQ1MDYxOSAyNy41NjI1IDExLjU2MjUgeiBNIDQuNDM5NDUzMSAxMS41NjY0MDYgQyA1LjgwMzA3NzMgMTMuNDc5MDQzIDcuNDM2NTA4NyAxNS4xMDI1MDkgOS4wMzMyMDMxIDE2LjQ5ODA0NyBDIDcuNDAxNzg5OSAxOC4xOTkzNjEgNS45NTk5NTc5IDIwLjA2ODEwNyA0Ljg1NzQyMTkgMjIuMjUgQyAzLjg5MTU3MzkgMTguNjc3NTI4IDMuNzUzNzE1NyAxNS4xMzEzMTQgNC40Mzk0NTMxIDExLjU2NjQwNiB6IE0gMjEuNTU4NTk0IDE3Ljc4NTE1NiBDIDIzLjI5NzMyNCAxOS42MTAxOTMgMjQuNzM3MzUgMjEuNjIxNDYzIDI1Ljc3OTI5NyAyNC4wMzcxMDkgQyAyNS42ODQ4MTkgMjQuMDcxMDA0IDI1LjU5MzkzMSAyNC4xMTQ2MDMgMjUuNDk0MTQxIDI0LjEzMjgxMiBDIDE5LjE2MTA2NiAyNS4yODk2MzggMTIuODM4OTM0IDI1LjI4OTYzNyA2LjUwNTg1OTQgMjQuMTMyODEyIEMgNi40MDY1MTM0IDI0LjExNDcwMSA2LjMxNjYzOCAyNC4wNzA3MzIgNi4yMjI2NTYyIDI0LjAzNzEwOSBDIDcuMjY3OTYxNSAyMS42NDQ0MyA4Ljc1MjkzOCAxOS42NTkzNTEgMTAuNTExNzE5IDE3LjgzMzk4NCBDIDExLjcxMzY3OSAxOC43NzE3ODUgMTIuODQ1ODA2IDE5LjU0MjEzNCAxMy43NDQxNDEgMjAuMDY2NDA2IEMgMTQuMjEyMjYyIDIwLjMzOTYwNCAxNC42MTk4MDUgMjAuNTUxNzM5IDE0Ljk2NDg0NCAyMC43MDcwMzEgQyAxNS4zMDk4ODIgMjAuODYyMzI0IDE1LjQ2OTgxNyAyMSAxNiAyMSBDIDE2LjUzMDE4MyAyMSAxNi42OTAxMTggMjAuODYyMzI0IDE3LjAzNTE1NiAyMC43MDcwMzEgQyAxNy4zODAxOTUgMjAuNTUxNzM5IDE3Ljc4NzczOCAyMC4zMzk2MDQgMTguMjU1ODU5IDIwLjA2NjQwNiBDIDE5LjE3Mzc2OSAxOS41MzA3MDkgMjAuMzI2NzIxIDE4Ljc1MjA2IDIxLjU1ODU5NCAxNy43ODUxNTYgeiI+PC9wYXRoPgo8L3N2Zz4="/>
+            Email</a>
+        </div>
+      </div>
+
+
+
+      <h2 class="header">Packages</h2>
+      <div id="filterList">
+        <div class="row text-center pb-2">
+          <div class="col-12">
+            <label id="pkgSelectLabel" for="pkgSelect">Filter Packages: </label>
+            <select id="pkgSelect" name="pkgSelect" onchange="filterPkg()">
+              <option value="all" onclick="filterPkg(this.id)" selected>All</option>
+              <option value="Themes (Settings)" onclick="filterPkg(this.id)">Settings</option>
+              <option value="Fonts (iOS 14-16)" onclick="filterPkg(this.id)">Fonts (iOS 14-16)</option>
+              <option value="Themes (Icons)" onclick="filterPkg(this.id)">Icons</option>
+              <option value="Themes (Control Center)" onclick="filterPkg(this.id)">Control Center</option>
+              <option value="Themes (Laetus)" onclick="filterPkg(this.id)">Laetus</option>
+              <option value="Themes (Music Controls)" onclick="filterPkg(this.id)">Music Controls</option>
+              <option value="Themes (NiceBarX)" onclick="filterPkg(this.id)">NiceBarX</option>
+              <option value="Themes (Juice)" onclick="filterPkg(this.id)">Juice</option>
+              <option value="Widgets" onclick="filterPkg(this.id)">Widgets</option>
+              <option value="Kaleidoscope" onclick="filterPkg(this.id)">Kaleidoscope</option>
+
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div class="packageList">
+        <div class="row" id="packages_row">
+          
+        </div>
       </div>
     </div>
-    <div class="caption center footer" style="font-size:12px;">2020 © Alo ALL RIGHTS RESERVED</div>
+
+    <!-- <div id="SetupsDiv" class="dataDivs">
+      <H1>SETUPS</H1>
+    </div> -->
+
+    <button id="GetPackagesButton" onclick="loadAndParseTweaks([{&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.linealcc&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Lineal CC&#x27;, &#x27;version&#x27;: &#x27;1.4&#x27;, &#x27;tagline&#x27;: &#x27;A simple CC theme&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Control Center)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Moved Top Bar Icons to Lineal Statusbar Theme&#x27;}, {&#x27;version&#x27;: &#x27;1.3&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added Prysm Support&#x27;}, {&#x27;version&#x27;: &#x27;1.4&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Should theme Prysm automatically when applied in (Snowboard) theme engine.&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.mars&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Mars)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.cocoa.minimal&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;HS | Cocoa Minimal (by HSL and Jazzy)&#x27;, &#x27;version&#x27;: &#x27;1.4&#x27;, &#x27;tagline&#x27;: &#x27;A sleek and modern homescreen widget&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Add DM Sans as the default typeface \t\n• Add option to use system font \t\n• Slight code refactor&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added optional weather&#x27;}, {&#x27;version&#x27;: &#x27;1.3&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added font weight option for system font&#x27;}, {&#x27;version&#x27;: &#x27;1.4&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added option to change default theme colors&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.flatmusiccontrols11&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Flat Music Controls&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Flat-looking music controls. Works in app, CC, and LS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Music Controls)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Updated for iOS 13. Enable Lineal Music Controls (iOS 13) in your theme engine!&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.pulsar&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Pulsar)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.emerald&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Emerald)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An emerald fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.amethyst-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Amethyst)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Amethyst-inspired fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.lunar-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Lunar)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.iridescent&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Iridescent&#x27;, &#x27;version&#x27;: &#x27;4.0&#x27;, &#x27;tagline&#x27;: &#x27;A collection of Kaleidoscope Presets&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Kaleidoscope&#x27;, &#x27;works_min&#x27;: &#x27;13.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;true&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release. Contains 22 Presets&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed Installation Error&#x27;}, {&#x27;version&#x27;: &#x27;2.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added 4 new presets&#x27;}, {&#x27;version&#x27;: &#x27;3.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added 3 new presets&#x27;}, {&#x27;version&#x27;: &#x27;4.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added 4 new presets: Wintertide, Achelois, Printing Dreams, StateOfWonder&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.kelmacc&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Kelma CC&#x27;, &#x27;version&#x27;: &#x27;1.1.2&#x27;, &#x27;tagline&#x27;: &#x27;A simple CC theme&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Control Center)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added Prysm Support&#x27;}, {&#x27;version&#x27;: &#x27;1.1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Should theme Prysm automatically when applied in (Snowboard) theme engine.&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.cocoa.puffs&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;HS | Cocoa Puffs (by HSL)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A neat and interactive widget&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;true&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.greendotssettings&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Green Dots Settings&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;Greeb Dots Settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added More Settings Icons\t\n• Added Support for iPhones 6, 6s, 7, and 8&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed icon sizes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.compacticonswhite-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Compacticons White for iOS&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Compacticons White for iOS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Icons)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.0.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Keyboard Globe and Mic Icons&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• +25 new icons\t\n• 2 New badge themes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.pulsar-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Pulsar)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.fonts.mikhak85&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Mikhak Font (85%)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Simple monoline semi handwriting font. 85% scale. For iOS 14-16&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alexman&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/Alexman1979&#x27;}], &#x27;section&#x27;: &#x27;Fonts (iOS 14-16)&#x27;, &#x27;works_min&#x27;: &#x27;14.0&#x27;, &#x27;works_max&#x27;: &#x27;16.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}], &#x27;tint&#x27;: &#x27;#5988B0&#x27;}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.whitedotssettings&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;White Dots Settings&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;White Dots Settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed icon sizes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.yellowdotssettings&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Yellow Dots Settings&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;Yellow Dots Settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added More Settings Icons\t\n• Added Support for iPhones 6, 6s, 7, and 8&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed icon sizes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.neptune&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Neptune)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.fonts.meloso80&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Meloso Font (80%)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Meloso is a font which has a playful and organic feel that has its own hand-drawn charm. 80% scale. For iOS 14-16&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alexman&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/Alexman1979&#x27;}], &#x27;section&#x27;: &#x27;Fonts (iOS 14-16)&#x27;, &#x27;works_min&#x27;: &#x27;14.0&#x27;, &#x27;works_max&#x27;: &#x27;16.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}], &#x27;tint&#x27;: &#x27;#5988B0&#x27;}, {&#x27;bundle_id&#x27;: &#x27;io.hsl.laetus3&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;HSL Laetus 3&#x27;, &#x27;version&#x27;: &#x27;1.0.3&#x27;, &#x27;tagline&#x27;: &#x27;A modern laetus theme.&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;happysolucki&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;happysolucki&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Laetus)&#x27;, &#x27;works_min&#x27;: &#x27;13.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial version&#x27;}, {&#x27;version&#x27;: &#x27;1.0.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Some subtle changes&#x27;}, {&#x27;version&#x27;: &#x27;1.0.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Some subtle changes&#x27;}, {&#x27;version&#x27;: &#x27;1.0.3&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Proper support for XR/11 and X/11 Pro in all supported languages&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.cocoa&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;HS | Cocoa (by HSL)&#x27;, &#x27;version&#x27;: &#x27;2.1&#x27;, &#x27;tagline&#x27;: &#x27;A sleek and modern homescreen widget&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;2.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Revamped widget settings for Xen HTML ver. 2.0~beta8 and higher \t\n• Added Boxy Mode \t\n• Added option to only show home container \t\n• Added option to only show music container&#x27;}, {&#x27;version&#x27;: &#x27;2.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Replaced Boxy Mode with a slider for border radius \t\n• Added slider for blur intensity \t\n• More options under Hiding Elements \t\n• Added option to make home container persist after app launch \t\n• Added battery saver mode \t\n• Other small improvements&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.blurbox&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Blur Box Widget&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Configurable Blurred Box XenHTML Widget&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.antheia&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Antheia Widgets (by HSL)&#x27;, &#x27;version&#x27;: &#x27;2.0&#x27;, &#x27;tagline&#x27;: &#x27;Sleek Widgets for the LS and HS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Adds Compatibility to most non-notched devices&#x27;}, {&#x27;version&#x27;: &#x27;2.0&#x27;, &#x27;changes&#x27;: &#x27;HS| Antheia: \t\n• Updated preferences \t\n• Added option to change background tint color \t\n• Added slider for border radius &amp; blur intensity \t\n• Added slider for additional height \t\n• Added option to use system font&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.linealmusiccontrols&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Lineal Music Controls&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Lineal music controls. Works in app, CC, and LS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Music Controls)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Updated for iOS 13. Enable Lineal Music Controls (iOS 13) in your theme engine!&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.citrine-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Citrine)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Citrine fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.nicebarxflat&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Flat Icons for NiceBarX&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;Flat Indicator Icons for NiceBarX&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (NiceBarX)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added Support for NiceBarX13&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Updated to work with the latest NiceBarX update&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.celestine&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Celestine)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.emerald-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Emerald)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An emerald fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.sunstone-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Sunstone)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Sunstone fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.neptune-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Neptune)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.ls.cotton&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;LS | Cotton&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Simple white widget showing time and weather&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;true&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Better support for 24hrs format&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.fonts.meloso100&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Meloso Font (100%)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Meloso is a font which has a playful and organic feel that has its own hand-drawn charm. 100% scale. For iOS 14-16&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alexman&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/Alexman1979&#x27;}], &#x27;section&#x27;: &#x27;Fonts (iOS 14-16)&#x27;, &#x27;works_min&#x27;: &#x27;14.0&#x27;, &#x27;works_max&#x27;: &#x27;16.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}], &#x27;tint&#x27;: &#x27;#5988B0&#x27;}, {&#x27;bundle_id&#x27;: &#x27;works.alo.doublebubble-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Double Bubble Settings (by Roo)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Double the fun!&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;true&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.compacticonswhite&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Compacticons White for iOS&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Compacticons White for iOS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Icons)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.0.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Keyboard Globe and Mic Icons&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• +25 new icons\t\n• 2 New badge themes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A colorful fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.laetus.1.purple&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Alo - Purple (Laetus #1)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Laetus #1: Reva UI inspired. The Purple Variant&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Laetus)&#x27;, &#x27;works_min&#x27;: &#x27;13.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.lunar&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Lunar)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.ls.ceres&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;LS | Ceres&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Elegant and Bueatiful Comprehensive Widget&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.sunstone&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Sunstone)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Sunstone fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A colorful fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.greendotssettings-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Green Dots Settings&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;Green Dots Settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added More Settings Icons\t\n• Added Support for iPhones 6, 6s, 7, and 8&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed icon sizes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.ls.macindows&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;LS | Macindows (by HSL)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A playful lockscreen widget inspired by niivu’s Macindows theme&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;true&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.yellowdotssettings-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Yellow Dots Settings&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;Yellow Dots Settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added More Settings Icons\t\n• Added Support for iPhones 6, 6s, 7, and 8&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed icon sizes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.fonts.mikhak100&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Mikhak Font (100%)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Simple monoline semi handwriting font. 100% scale. For iOS 14-16&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alexman&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/Alexman1979&#x27;}], &#x27;section&#x27;: &#x27;Fonts (iOS 14-16)&#x27;, &#x27;works_min&#x27;: &#x27;14.0&#x27;, &#x27;works_max&#x27;: &#x27;16.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}], &#x27;tint&#x27;: &#x27;#5988B0&#x27;}, {&#x27;bundle_id&#x27;: &#x27;works.alo.laetus.mirage&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Mirage Laetus Theme&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A modern blurry laetus theme&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Laetus)&#x27;, &#x27;works_min&#x27;: &#x27;13.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.sapphire&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Sapphire)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Shapphire fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.doublebubble&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Double Bubble Settings (by Roo)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Double the fun!&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;true&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.hsl.laetus.twixy&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;HSL Laetus Theme - Twixy&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A modern laetus theme.&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;happysolucki&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;happysolucki&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Laetus)&#x27;, &#x27;works_min&#x27;: &#x27;13.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial version&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.muses&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Muses&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An elegant music widget&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.ls.helios&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;LS | Helios&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Simple is better&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed 24hrs and undefined issue&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.laetus.1&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Alo - Blue (Laetus #1)&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Laetus #1: Reva UI inspired. The original Blue&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Laetus)&#x27;, &#x27;works_min&#x27;: &#x27;13.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added Number Keypad, and support for Max and 2x notched devices&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.fonts.meloso85&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Meloso Font (85%)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;Meloso is a font which has a playful and organic feel that has its own hand-drawn charm. 85% scale. For iOS 14-16&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alexman&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/Alexman1979&#x27;}], &#x27;section&#x27;: &#x27;Fonts (iOS 14-16)&#x27;, &#x27;works_min&#x27;: &#x27;14.0&#x27;, &#x27;works_max&#x27;: &#x27;16.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}], &#x27;tint&#x27;: &#x27;#5988B0&#x27;}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.sapphire-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Sapphire)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Shapphire fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.ruby-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Ruby)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Ruby fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.nicebarxlineal&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Lineal Icons for NiceBarX&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;Lineal Icons for NiceBarX. Statusbar and Indicator icons&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (NiceBarX)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Added Support for NiceBarX13 \t\n• Added WiFi and Cellular Icons&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Updated to work with the latest NiceBarX update&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.duo&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Duo Widgets&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;3 Dual Tone Widgets&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.compacticons&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Compacticons for iOS&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Compacticons for iOS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Icons)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.0.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Keyboard Globe and Mic Icons&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• +25 new icons\t\n• 2 New badge themes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.juice.sye17&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Alo-Sye17 Juice Battery Theme&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A battery theme to go with Sye17 Status Bar&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Juice)&#x27;, &#x27;works_min&#x27;: &#x27;12.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.ruby&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Ruby)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Ruby fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.amethyst&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Amethyst)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Amethyst-inspired fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.celestine-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Celestine)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.moonstones.mars-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Moonstones Settings (Mars)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;A very simple yet elegant settings theme that will add extra flair to any setup&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;KennyRoo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/_Kennyroo&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.quartzsettings.citrine&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;Quartz Settings (Citrine)&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;An Citrine fancy look for your settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;HSL&#x27;, &#x27;email&#x27;: &#x27;happysolucki@outlook.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/happysolucki&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;works.alo.xen.ls.aegean&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm&#x27;, &#x27;name&#x27;: &#x27;LS | Aegean Clock&#x27;, &#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;tagline&#x27;: &#x27;a simple clock with date&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Widgets&#x27;, &#x27;works_min&#x27;: &#x27;9.0&#x27;, &#x27;works_max&#x27;: &#x27;14.3&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.compacticons-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;Compacticons for iOS&#x27;, &#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;tagline&#x27;: &#x27;Compacticons for iOS&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Icons)&#x27;, &#x27;works_min&#x27;: &#x27;11.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.0&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.0.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Keyboard Globe and Mic Icons&#x27;}, {&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• +25 new icons\t\n• 2 New badge themes&#x27;}]}, {&#x27;bundle_id&#x27;: &#x27;io.github.worksbybbs.whitedotssettings-rootless&#x27;, &#x27;architecture&#x27;: &#x27;iphoneos-arm64&#x27;, &#x27;name&#x27;: &#x27;White Dots Settings&#x27;, &#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;tagline&#x27;: &#x27;White Dots Settings&#x27;, &#x27;homepage&#x27;: &#x27;https://alo.works/&#x27;, &#x27;developer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;maintainer&#x27;: {&#x27;name&#x27;: &#x27;Alo&#x27;, &#x27;email&#x27;: &#x27;bbscydia@gmail.com&#x27;}, &#x27;social&#x27;: [{&#x27;name&#x27;: &#x27;Twitter&#x27;, &#x27;url&#x27;: &#x27;https://twitter.com/alolastmoment&#x27;}], &#x27;section&#x27;: &#x27;Themes (Settings)&#x27;, &#x27;works_min&#x27;: &#x27;7.0&#x27;, &#x27;works_max&#x27;: &#x27;16.6.1&#x27;, &#x27;featured&#x27;: &#x27;false&#x27;, &#x27;changelog&#x27;: [{&#x27;version&#x27;: &#x27;1.1&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Initial Release&#x27;}, {&#x27;version&#x27;: &#x27;1.2&#x27;, &#x27;changes&#x27;: &#x27;\t\n• Fixed icon sizes&#x27;}]}])" style="display:none;"></button>
+
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<br />
+  <footer class="footer mt-auto py-3 center">
+    <div class="container">
+      <span class="footerCircle circle1"></span>
+      <span class="footerCircle circle2"></span>
+      <span style="padding: 10px;font-size:12px;">2024 © Alo ALL RIGHTS RESERVED</span>
+      <span class="footerCircle circle3"></span>
+      <span class="footerCircle circle4"></span>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+
 
   <script>
     function filterPkg() {
       var selectedOption = $('#pkgSelect').val();
 
-      if(selectedOption == "all"){
+
+      if (selectedOption == "all") {
         $('.package-card').parent().parent().fadeOut(0);
         $('.package-card').parent().parent().fadeIn('fast');
       } else {
-        var divContains = $('div.packageListItem').find("p:contains("+selectedOption+")").parent().parent().parent().parent().parent().parent();
-        //console.log(divContains);
+        var divContains = $('div.packageListItem').find("p:contains(" + selectedOption + ")").parent().parent().parent().parent().parent().parent().parent();
+        console.log(divContains);
         var divNotContains = $(divContains).parent().children().not(divContains);
-        //console.log(divNotContains);
+        console.log(divNotContains);
 
         $(divNotContains).fadeOut(0);
         $(divContains).fadeOut(0);
@@ -1450,9 +224,191 @@
 
 
       }
+    }
 
+    function filterPackagesByArch() {
+      var selectedArch = '';
+    }
+
+    //function to sort through tweaks
+    function loadAndParseTweaks(tweaks) {
+      console.log(tweaks);
+
+      var result = Object.values(tweaks.reduce((a, c) => {
+        (a[c.name] || (a[c.name] = { name: c.name, bundle_id: c.bundle_id, version: c.version, section: c.section, developer: c.developer.name, tagline: c.tagline, archList: [] })).archList.push(c.architecture);
+        return a;
+      }, {}));
+
+      console.log(result);
+      /*
+        {
+    "name": "Lineal CC",
+    "version": "1.4",
+    "section": "Themes (Control Center)",
+    "developer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "tagline": "A simple CC theme",
+    "archList": [
+        "iphoneos-arm"
+    ]
+}
+      */
+      var txtHTML = '';
+
+      for (var i = 0; i < result.length; i++) {
+        txtHTML = txtHTML + `<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-2 packageListItem">
+          <a class="subtle_link" href="depiction/web/${result[i].bundle_id}.html" target=”_blank”>
+          <div class="package-card h-100">
+            <div class="package-card-content">
+              <div class="row">
+                <div class="col">
+                  <img class="img-fluid card-content-img" src="assets/${result[i].bundle_id}/banner.png">
+                    <div class="package-card-title">
+                      <p class="pkg_title">${result[i].name}</p>
+                      
+                      <p class="pkg_developer"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxjaXJjbGUgY3g9IjEyLjUiIGN5PSIxNy41IiByPSIxLjI1Ij48L2NpcmNsZT48Y2lyY2xlIGN4PSIxOS41IiBjeT0iMTcuNSIgcj0iMS4yNSI+PC9jaXJjbGU+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNOSwxNSBjMS43MzctMS4zNzIsMi41LTMsMi43MDgtNS4wNzEiPjwvcGF0aD48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik03LjI3NywxOUM2LjUsMjUuNSwxMC44MjcsMjksMTYsMjlzOS42NzktMi43NzMsOS0xMC41Yy0wLjItMi4yNy0xLjg5OS00LjM0Ni02LTVjLTIuODU5LTAuNDU2LTUuMzA4LTAuNDU3LTcuMjkyLTMuNTcxIj48L3BhdGg+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNNy4yNzcsMTlDMywxNC45MzYsMy4wOTcsOS42NTIsNS44MjIsNi42OThjMi4zODktMi41OSw1LjUzLTIuODgyLDguMjc1LTEuNTUzYzAsMCwyLjM3OS0yLjE0NSw2LjAxLTIuMTQ1IGMzLjgyOSwwLDYuMjE4LDIuMTgxLDcuMjU4LDQuNzM5QzI4LjcsMTEuMDI1LDI4LjI4NCwxNS40LDI1LDE4LjUiPjwvcGF0aD4KPC9zdmc+"/ > ${result[i].developer}</p>
+                      <p class="pkg_section"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGQ9Ik0gMTYgNCBDIDEyLjk1ODMzMyA0IDkuOTI0ODAxOCA0LjE4NjM2MTIgNy41ODU5Mzc1IDQuNTc2MTcxOSBDIDYuNDE2NTA1MyA0Ljc3MTA3NzIgNS40MjUwMjk3IDUuMDA3ODU1NSA0LjYzNjcxODggNS4zNDU3MDMxIEMgNC4yNDI1NjMyIDUuNTE0NjI2OSAzLjg5NDQ4NjIgNS43MDYwMzE2IDMuNTg3ODkwNiA1Ljk5MjE4NzUgQyAzLjI4MTI5NTEgNi4yNzgzNDM0IDMgNi43MjkxNjY3IDMgNy4yNSBMIDMgOSBDIDMgOS41MjA4MzMzIDMuMjgxMjk1MSA5Ljk3MTY1NzEgMy41ODc4OTA2IDEwLjI1NzgxMiBDIDMuODk0NDg2MiAxMC41NDM5NjkgNC4yNDI1NjMyIDEwLjczNTM3MyA0LjYzNjcxODggMTAuOTA0Mjk3IEMgNC42NjQ4MTUxIDEwLjkxNjMzOCA0LjY5Nzk1MTEgMTAuOTI1NzEzIDQuNzI2NTYyNSAxMC45Mzc1IEMgMy41ODMxNzY4IDE1LjYwNTk2OSAzLjYwODUyOCAxOS44MDgxNDEgNC44MjgxMjUgMjQuNTA3ODEyIEMgNS4yOTMwNzA0IDI2LjI5NzQxNCA2LjcyMTcxNjYgMjcuNjk1Njg0IDguNTI5Mjk2OSAyOC4xMDU0NjkgQyAxMy40NDcwNzcgMjkuMjE5MjU5IDE4LjU1Mjg3NSAyOS4yMTg5NzEgMjMuNDcwNzAzIDI4LjEwNTQ2OSBDIDI1LjI3OTEyNSAyNy42OTY3NSAyNi43MDk4MjQgMjYuMjk5MzE3IDI3LjE3MzgyOCAyNC41MDk3NjYgQyAyOC4zOTMzMDcgMTkuODA5OTk5IDI4LjQxNDkzOCAxNS42MDYwNjYgMjcuMjcxNDg0IDEwLjkzNzUgQyAyNy4zMDA2NTIgMTAuOTI1NDkzIDI3LjMzNDY0OSAxMC45MTY1NjggMjcuMzYzMjgxIDEwLjkwNDI5NyBDIDI3Ljc1NzQzNyAxMC43MzUzNzMgMjguMTA1NTE0IDEwLjU0Mzk2OCAyOC40MTIxMDkgMTAuMjU3ODEyIEMgMjguNzE4NzA1IDkuOTcxNjU3MSAyOSA5LjUyMDgzMzMgMjkgOSBMIDI5IDcuMjUgQyAyOSA2LjcyOTE2NjcgMjguNzE4NzA1IDYuMjc4MzQzNCAyOC40MTIxMDkgNS45OTIxODc1IEMgMjguMTA1NTE0IDUuNzA2MDMxNiAyNy43NTc0MzcgNS41MTQ2MjY5IDI3LjM2MzI4MSA1LjM0NTcwMzEgQyAyNi41NzQ5NyA1LjAwNzg1NTUgMjUuNTgzNDk1IDQuNzcxMDc3MiAyNC40MTQwNjIgNC41NzYxNzE5IEMgMjIuMDc1MTk4IDQuMTg2MzYxMiAxOS4wNDE2NjcgNCAxNiA0IHogTSAxNiA2IEMgMTguOTU4MzMzIDYgMjEuOTI0ODAyIDYuMTg4NjM4OCAyNC4wODU5MzggNi41NDg4MjgxIEMgMjUuMTY2NTA0IDYuNzI4OTIyOCAyNi4wNTAwMyA2Ljk2MDg5NDUgMjYuNTc0MjE5IDcuMTg1NTQ2OSBDIDI2LjgwOTM5MiA3LjI4NjMzNTYgMjYuOTM3NTM1IDcuMzc1NDM2NSAyNyA3LjQyNTc4MTIgTCAyNyA4LjgyNDIxODggQyAyNi45Mzc1MzUgOC44NzQ1NjM1IDI2LjgwOTM5MiA4Ljk2MzY2NDQgMjYuNTc0MjE5IDkuMDY0NDUzMSBDIDI2LjA1MDAzIDkuMjg5MTA1NSAyNS4xNjY1MDUgOS41MjEwNzcyIDI0LjA4NTkzOCA5LjcwMTE3MTkgQyAyMS45MjQ4MDIgMTAuMDYxMzYxIDE4Ljk1ODMzMyAxMC4yNSAxNiAxMC4yNSBDIDEzLjA0MTY2NyAxMC4yNSAxMC4wNzUxOTggMTAuMDYxMzYxIDcuOTE0MDYyNSA5LjcwMTE3MTkgQyA2LjgzMzQ5NDcgOS41MjEwNzcyIDUuOTQ5OTcwMyA5LjI4OTEwNTUgNS40MjU3ODEyIDkuMDY0NDUzMSBDIDUuMTkwNjA3NiA4Ljk2MzY2NDQgNS4wNjI0NjQ2IDguODc0NTYzNCA1IDguODI0MjE4OCBMIDUgNy40MjU3ODEyIEMgNS4wNjI0NjQ2IDcuMzc1NDM2NSA1LjE5MDYwNzcgNy4yODYzMzU2IDUuNDI1NzgxMiA3LjE4NTU0NjkgQyA1Ljk0OTk3MDIgNi45NjA4OTQ1IDYuODMzNDk0NyA2LjcyODkyMjggNy45MTQwNjI1IDYuNTQ4ODI4MSBDIDEwLjA3NTE5OCA2LjE4ODYzODggMTMuMDQxNjY3IDYgMTYgNiB6IE0gNi42NTIzNDM4IDExLjQ4MjQyMiBDIDYuOTU5NjIxMyAxMS41NDcwNzggNy4yNDg0MDM1IDExLjYxNzU3MyA3LjU4NTkzNzUgMTEuNjczODI4IEMgOS45MjQ4MDE4IDEyLjA2MzYzOSAxMi45NTgzMzMgMTIuMjUgMTYgMTIuMjUgQyAxOS4wNDE2NjcgMTIuMjUgMjIuMDc1MTk4IDEyLjA2MzYzOSAyNC40MTQwNjIgMTEuNjczODI4IEMgMjQuNzUyMjc0IDExLjYxNzQ2IDI1LjA0MTc3NyAxMS41NDcyMjcgMjUuMzQ5NjA5IDExLjQ4MjQyMiBDIDI2LjQxMjA1MyAxNS44NDU0NjUgMjYuMzgxMjY0IDE5LjU5NTMzNyAyNS4yMzYzMjggMjQuMDA3ODEyIEMgMjQuOTYwMzMyIDI1LjA3MjI2MSAyNC4wOTg4MjggMjUuOTEzMDE1IDIzLjAzMTI1IDI2LjE1NDI5NyBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjMuMDI5Mjk3IDI2LjE1NDI5NyBDIDE4LjQwMTcxMiAyNy4yMDIzNjMgMTMuNTk4Mjg4IDI3LjIwMjM2MyA4Ljk3MDcwMzEgMjYuMTU0Mjk3IEMgNy45MDIzMzE4IDI1LjkxMjA4MiA3LjA0MDcyNjUgMjUuMDcyMjU4IDYuNzYzNjcxOSAyNC4wMDU4NTkgQyA1LjYxODYzOTIgMTkuNTkzNTIgNS41ODk3MDU1IDE1Ljg0NDgxMSA2LjY1MjM0MzggMTEuNDgyNDIyIHogTSAxOS41MTU2MjUgMTQuOTgyNDIyIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAxOS4wOTc2NTYgMTUuMDgzOTg0IEMgMTcuMTIwNTYxIDE1LjkzOTU0NCAxNC44Nzk0MzkgMTUuOTM5NTQ0IDEyLjkwMjM0NCAxNS4wODM5ODQgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDEyLjUxMzY3MiAxNC45OTYwOTQgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDEyLjEwNzQyMiAxNi45MTc5NjkgQyAxNC41OTAzMjYgMTcuOTkyNDA5IDE3LjQwNzcyMSAxNy45OTI0MDkgMTkuODkwNjI1IDE2LjkxNzk2OSBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMTkuNTE1NjI1IDE0Ljk4MjQyMiB6Ij48L3BhdGg+Cjwvc3ZnPg=="/> ${result[i].section}</p>
+                      <p class="pkg_version"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGQ9Ik0gMTEuNSAyIEMgMTAuNDE2NjY3IDIgOS40NzY4OTIzIDIuNDQyMjU1NiA4Ljg3Njk1MzEgMy4xMTcxODc1IEMgOC4yNzcwMTM5IDMuNzkyMTE5NCA4IDQuNjUyNzc3OSA4IDUuNSBDIDggNi4zNDcyMjIxIDguMjc3MDEzOSA3LjIwNzg4MDYgOC44NzY5NTMxIDcuODgyODEyNSBDIDkuMDg4MjUzNyA4LjEyMDUyNTggOS4zNTM1ODg0IDguMzE1NDk3IDkuNjQwNjI1IDguNDg2MzI4MSBDIDkuMjI2ODM0MiA5LjgwMDA3MTkgOC41IDEyLjU2MTAyMyA4LjUgMTYgQyA4LjUgMTkuNDM4OTc3IDkuMjI2ODM0MiAyMi4xOTk5MjggOS42NDA2MjUgMjMuNTEzNjcyIEMgOS4zNTM1ODg0IDIzLjY4NDUwMyA5LjA4ODI1MzcgMjMuODc5NDc0IDguODc2OTUzMSAyNC4xMTcxODggQyA4LjI3NzAxMzkgMjQuNzkyMTE5IDggMjUuNjUyNzc4IDggMjYuNSBDIDggMjcuMzQ3MjIyIDguMjc3MDEzOSAyOC4yMDc4ODIgOC44NzY5NTMxIDI4Ljg4MjgxMiBDIDkuNDc2ODkyMyAyOS41NTc3NDQgMTAuNDE2NjY3IDMwIDExLjUgMzAgQyAxMi41ODMzMzMgMzAgMTMuNTIzMTA4IDI5LjU1Nzc0NCAxNC4xMjMwNDcgMjguODgyODEyIEMgMTQuNzIyOTg2IDI4LjIwNzg4MSAxNSAyNy4zNDcyMjIgMTUgMjYuNSBDIDE1IDI1LjY1Mjc3OCAxNC43MjI5ODYgMjQuNzkyMTE4IDE0LjEyMzA0NyAyNC4xMTcxODggQyAxMy41NDQ4MDQgMjMuNDY2NjY0IDEyLjY0NzE4MSAyMy4wNDIyODUgMTEuNjEzMjgxIDIzLjAxMTcxOSBDIDExLjM2NTAxNyAyMi4wNzIxNTcgMTAuOTA1Njg5IDIwLjExNDY2OSAxMC43MDExNzIgMTcuNzA3MDMxIEMgMTEuNTQzNzk4IDE4LjE5MTIzNSAxMi41MDM1OTYgMTguNTI3NDEyIDEzLjUxNTYyNSAxOC43MjI2NTYgQyAxNS41MDUyMzggMTkuMTA2NDk5IDE3LjcxNTkyNiAxOC45NzkxMDYgMTkuNzQwMjM0IDE4LjMyNDIxOSBDIDIxLjc2NDU0MyAxNy42NjkzMzEgMjMuNjI2MzEzIDE2LjQ3MDg5IDI0Ljc1IDE0LjYzNDc2NiBDIDI1Ljc1NzExMSAxMi45ODkxMjggMjYuMDk0MjkzIDEwLjg1NTEwMyAyNS40OTAyMzQgOC40MTIxMDk0IEMgMjUuNzI1NjgyIDguMjU3MzE0IDI1Ljk0MzMxOSA4LjA4NTAwNiAyNi4xMjMwNDcgNy44ODI4MTI1IEMgMjYuNzIyOTg2IDcuMjA3ODgwNiAyNyA2LjM0NzIyMjEgMjcgNS41IEMgMjcgNC42NTI3Nzc5IDI2LjcyMjk4NiAzLjc5MjExOTQgMjYuMTIzMDQ3IDMuMTE3MTg3NSBDIDI1LjUyMzEwOCAyLjQ0MjI1NTYgMjQuNTgzMzMzIDIgMjMuNSAyIEMgMjIuNDE2NjY3IDIgMjEuNDc2ODkyIDIuNDQyMjU1NiAyMC44NzY5NTMgMy4xMTcxODc1IEMgMjAuMjc3MDE0IDMuNzkyMTE5NCAyMCA0LjY1Mjc3NzkgMjAgNS41IEMgMjAgNi4zNDcyMjIxIDIwLjI3NzAxNCA3LjIwNzg4MDYgMjAuODc2OTUzIDcuODgyODEyNSBDIDIxLjQ3Njg5MiA4LjU1Nzc0NDQgMjIuNDE2NjY3IDkgMjMuNSA5IEMgMjMuNTI3Njc4IDkgMjMuNTUyNTkxIDguOTkyNzYxNCAyMy41ODAwNzggOC45OTIxODc1IEMgMjQuMDU1NTkxIDEwLjk1MjAxNiAyMy43NTY2OTQgMTIuNDIzNjAzIDIzLjA0Mjk2OSAxMy41ODk4NDQgQyAyMi4yMzM4NDMgMTQuOTExOTY5IDIwLjgwODQ0MSAxNS44NzcyNjIgMTkuMTI1IDE2LjQyMTg3NSBDIDE3LjQ0MTU1OSAxNi45NjY0ODggMTUuNTI0MjMxIDE3LjA3NDE3MyAxMy44OTQ1MzEgMTYuNzU5NzY2IEMgMTIuNDI1MTQ1IDE2LjQ3NjI4NyAxMS4yOTg5MzcgMTUuODIzNjg3IDEwLjYxNzE4OCAxNS4wMDM5MDYgQyAxMC43NTgwMDkgMTIuMjQ0NTUgMTEuMzA5MDUyIDEwLjAxMzY4NSAxMS41OTk2MDkgOC45OTAyMzQ0IEMgMTIuNjM5NDg1IDguOTYzMjIxMyAxMy41NDIxNzUgOC41MzYyOTM3IDE0LjEyMzA0NyA3Ljg4MjgxMjUgQyAxNC43MjI5ODYgNy4yMDc4ODA2IDE1IDYuMzQ3MjIyMSAxNSA1LjUgQyAxNSA0LjY1Mjc3NzkgMTQuNzIyOTg2IDMuNzkyMTE5NCAxNC4xMjMwNDcgMy4xMTcxODc1IEMgMTMuNTIzMTA4IDIuNDQyMjU1NiAxMi41ODMzMzMgMiAxMS41IDIgeiBNIDExLjUgNCBDIDEyLjA4MzMzMyA0IDEyLjM5MzU1OSA0LjE4Mjc0NDQgMTIuNjI2OTUzIDQuNDQ1MzEyNSBDIDEyLjg2MDM0NyA0LjcwNzg4MDYgMTMgNS4wOTcyMjIxIDEzIDUuNSBDIDEzIDUuOTAyNzc3OSAxMi44NjAzNDcgNi4yOTIxMTk0IDEyLjYyNjk1MyA2LjU1NDY4NzUgQyAxMi4zOTM1NTkgNi44MTcyNTU2IDEyLjA4MzMzMyA3IDExLjUgNyBDIDEwLjkxNjY2NyA3IDEwLjYwNjQ0MSA2LjgxNzI1NTYgMTAuMzczMDQ3IDYuNTU0Njg3NSBDIDEwLjEzOTY1MyA2LjI5MjExOTQgMTAgNS45MDI3Nzc5IDEwIDUuNSBDIDEwIDUuMDk3MjIyMSAxMC4xMzk2NTMgNC43MDc4ODA2IDEwLjM3MzA0NyA0LjQ0NTMxMjUgQyAxMC42MDY0NDEgNC4xODI3NDQ0IDEwLjkxNjY2NyA0IDExLjUgNCB6IE0gMjMuNSA0IEMgMjQuMDgzMzMzIDQgMjQuMzkzNTU5IDQuMTgyNzQ0NCAyNC42MjY5NTMgNC40NDUzMTI1IEMgMjQuODYwMzQ3IDQuNzA3ODgwNiAyNSA1LjA5NzIyMjEgMjUgNS41IEMgMjUgNS45MDI3Nzc5IDI0Ljg2MDM0NyA2LjI5MjExOTQgMjQuNjI2OTUzIDYuNTU0Njg3NSBDIDI0LjM5MzU1OSA2LjgxNzI1NTYgMjQuMDgzMzMzIDcgMjMuNSA3IEMgMjIuOTE2NjY3IDcgMjIuNjA2NDQxIDYuODE3MjU1NiAyMi4zNzMwNDcgNi41NTQ2ODc1IEMgMjIuMTM5NjUzIDYuMjkyMTE5NCAyMiA1LjkwMjc3NzkgMjIgNS41IEMgMjIgNS4wOTcyMjIxIDIyLjEzOTY1MyA0LjcwNzg4MDYgMjIuMzczMDQ3IDQuNDQ1MzEyNSBDIDIyLjYwNjQ0MSA0LjE4Mjc0NDQgMjIuOTE2NjY3IDQgMjMuNSA0IHogTSAxMS41IDI1IEMgMTIuMDgzMzMzIDI1IDEyLjM5MzU1OSAyNS4xODI3NDQgMTIuNjI2OTUzIDI1LjQ0NTMxMiBDIDEyLjg2MDM0NyAyNS43MDc4ODEgMTMgMjYuMDk3MjIyIDEzIDI2LjUgQyAxMyAyNi45MDI3NzggMTIuODYwMzQ3IDI3LjI5MjExOCAxMi42MjY5NTMgMjcuNTU0Njg4IEMgMTIuMzkzNTU5IDI3LjgxNzI1NiAxMi4wODMzMzMgMjggMTEuNSAyOCBDIDEwLjkxNjY2NyAyOCAxMC42MDY0NDEgMjcuODE3MjU2IDEwLjM3MzA0NyAyNy41NTQ2ODggQyAxMC4xMzk2NTMgMjcuMjkyMTE5IDEwIDI2LjkwMjc3OCAxMCAyNi41IEMgMTAgMjYuMDk3MjIyIDEwLjEzOTY1MyAyNS43MDc4ODIgMTAuMzczMDQ3IDI1LjQ0NTMxMiBDIDEwLjYwNjQ0MSAyNS4xODI3NDQgMTAuOTE2NjY3IDI1IDExLjUgMjUgeiI+PC9wYXRoPgo8L3N2Zz4="/> ${result[i].version}</p>
+                    </div>
+                </div>
+              </div>
+            </div>`
+        txtHTML = txtHTML + `<div class="row" style="position:relative;bottom:0;">`;
+        for (var j = 0; j < result[i].archList.length; j++) {
+          if (result[i].archList[j] == 'iphoneos-arm') {
+            txtHTML = txtHTML + `<div class="col-6">
+                <div class="package-card-arch">
+                <p class="pkg_arch pkg_arch_rootful">Rootful</p>
+                </div></div>`
+          }
+          if (result[i].archList[j] == 'iphoneos-arm64') {
+            txtHTML = txtHTML + `<div class="col-6">
+                <div class="package-card-arch">
+                <p class="pkg_arch pkg_arch_rootless">Rootless</p>
+                </div></div>`
+          }
+
+        }
+
+        txtHTML = txtHTML + `</div></div>
+            </a>
+          </div>`
+      }
+
+      $('#packages_row').html(txtHTML);
+
+      /*<div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-3 packageListItem ">
+            <a class="subtle_link" href="depiction/web/.html">
+              <div class="package-card h-100">
+                <div class="package-card-content ">
+                  <div class="row">
+                  <div class="col">
+
+                    <img class="img-fluid card-content-img" src="assets//banner.png">
+
+                    <div class="package-card-title">
+                      <p class="pkg_title"></p>
+                      <p class="pkg_arch"></p>
+                      <p class="pkg_developer"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxjaXJjbGUgY3g9IjEyLjUiIGN5PSIxNy41IiByPSIxLjI1Ij48L2NpcmNsZT48Y2lyY2xlIGN4PSIxOS41IiBjeT0iMTcuNSIgcj0iMS4yNSI+PC9jaXJjbGU+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNOSwxNSBjMS43MzctMS4zNzIsMi41LTMsMi43MDgtNS4wNzEiPjwvcGF0aD48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik03LjI3NywxOUM2LjUsMjUuNSwxMC44MjcsMjksMTYsMjlzOS42NzktMi43NzMsOS0xMC41Yy0wLjItMi4yNy0xLjg5OS00LjM0Ni02LTVjLTIuODU5LTAuNDU2LTUuMzA4LTAuNDU3LTcuMjkyLTMuNTcxIj48L3BhdGg+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNNy4yNzcsMTlDMywxNC45MzYsMy4wOTcsOS42NTIsNS44MjIsNi42OThjMi4zODktMi41OSw1LjUzLTIuODgyLDguMjc1LTEuNTUzYzAsMCwyLjM3OS0yLjE0NSw2LjAxLTIuMTQ1IGMzLjgyOSwwLDYuMjE4LDIuMTgxLDcuMjU4LDQuNzM5QzI4LjcsMTEuMDI1LDI4LjI4NCwxNS40LDI1LDE4LjUiPjwvcGF0aD4KPC9zdmc+"/ > </p>
+                      <p class="pkg_section"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGQ9Ik0gMTYgNCBDIDEyLjk1ODMzMyA0IDkuOTI0ODAxOCA0LjE4NjM2MTIgNy41ODU5Mzc1IDQuNTc2MTcxOSBDIDYuNDE2NTA1MyA0Ljc3MTA3NzIgNS40MjUwMjk3IDUuMDA3ODU1NSA0LjYzNjcxODggNS4zNDU3MDMxIEMgNC4yNDI1NjMyIDUuNTE0NjI2OSAzLjg5NDQ4NjIgNS43MDYwMzE2IDMuNTg3ODkwNiA1Ljk5MjE4NzUgQyAzLjI4MTI5NTEgNi4yNzgzNDM0IDMgNi43MjkxNjY3IDMgNy4yNSBMIDMgOSBDIDMgOS41MjA4MzMzIDMuMjgxMjk1MSA5Ljk3MTY1NzEgMy41ODc4OTA2IDEwLjI1NzgxMiBDIDMuODk0NDg2MiAxMC41NDM5NjkgNC4yNDI1NjMyIDEwLjczNTM3MyA0LjYzNjcxODggMTAuOTA0Mjk3IEMgNC42NjQ4MTUxIDEwLjkxNjMzOCA0LjY5Nzk1MTEgMTAuOTI1NzEzIDQuNzI2NTYyNSAxMC45Mzc1IEMgMy41ODMxNzY4IDE1LjYwNTk2OSAzLjYwODUyOCAxOS44MDgxNDEgNC44MjgxMjUgMjQuNTA3ODEyIEMgNS4yOTMwNzA0IDI2LjI5NzQxNCA2LjcyMTcxNjYgMjcuNjk1Njg0IDguNTI5Mjk2OSAyOC4xMDU0NjkgQyAxMy40NDcwNzcgMjkuMjE5MjU5IDE4LjU1Mjg3NSAyOS4yMTg5NzEgMjMuNDcwNzAzIDI4LjEwNTQ2OSBDIDI1LjI3OTEyNSAyNy42OTY3NSAyNi43MDk4MjQgMjYuMjk5MzE3IDI3LjE3MzgyOCAyNC41MDk3NjYgQyAyOC4zOTMzMDcgMTkuODA5OTk5IDI4LjQxNDkzOCAxNS42MDYwNjYgMjcuMjcxNDg0IDEwLjkzNzUgQyAyNy4zMDA2NTIgMTAuOTI1NDkzIDI3LjMzNDY0OSAxMC45MTY1NjggMjcuMzYzMjgxIDEwLjkwNDI5NyBDIDI3Ljc1NzQzNyAxMC43MzUzNzMgMjguMTA1NTE0IDEwLjU0Mzk2OCAyOC40MTIxMDkgMTAuMjU3ODEyIEMgMjguNzE4NzA1IDkuOTcxNjU3MSAyOSA5LjUyMDgzMzMgMjkgOSBMIDI5IDcuMjUgQyAyOSA2LjcyOTE2NjcgMjguNzE4NzA1IDYuMjc4MzQzNCAyOC40MTIxMDkgNS45OTIxODc1IEMgMjguMTA1NTE0IDUuNzA2MDMxNiAyNy43NTc0MzcgNS41MTQ2MjY5IDI3LjM2MzI4MSA1LjM0NTcwMzEgQyAyNi41NzQ5NyA1LjAwNzg1NTUgMjUuNTgzNDk1IDQuNzcxMDc3MiAyNC40MTQwNjIgNC41NzYxNzE5IEMgMjIuMDc1MTk4IDQuMTg2MzYxMiAxOS4wNDE2NjcgNCAxNiA0IHogTSAxNiA2IEMgMTguOTU4MzMzIDYgMjEuOTI0ODAyIDYuMTg4NjM4OCAyNC4wODU5MzggNi41NDg4MjgxIEMgMjUuMTY2NTA0IDYuNzI4OTIyOCAyNi4wNTAwMyA2Ljk2MDg5NDUgMjYuNTc0MjE5IDcuMTg1NTQ2OSBDIDI2LjgwOTM5MiA3LjI4NjMzNTYgMjYuOTM3NTM1IDcuMzc1NDM2NSAyNyA3LjQyNTc4MTIgTCAyNyA4LjgyNDIxODggQyAyNi45Mzc1MzUgOC44NzQ1NjM1IDI2LjgwOTM5MiA4Ljk2MzY2NDQgMjYuNTc0MjE5IDkuMDY0NDUzMSBDIDI2LjA1MDAzIDkuMjg5MTA1NSAyNS4xNjY1MDUgOS41MjEwNzcyIDI0LjA4NTkzOCA5LjcwMTE3MTkgQyAyMS45MjQ4MDIgMTAuMDYxMzYxIDE4Ljk1ODMzMyAxMC4yNSAxNiAxMC4yNSBDIDEzLjA0MTY2NyAxMC4yNSAxMC4wNzUxOTggMTAuMDYxMzYxIDcuOTE0MDYyNSA5LjcwMTE3MTkgQyA2LjgzMzQ5NDcgOS41MjEwNzcyIDUuOTQ5OTcwMyA5LjI4OTEwNTUgNS40MjU3ODEyIDkuMDY0NDUzMSBDIDUuMTkwNjA3NiA4Ljk2MzY2NDQgNS4wNjI0NjQ2IDguODc0NTYzNCA1IDguODI0MjE4OCBMIDUgNy40MjU3ODEyIEMgNS4wNjI0NjQ2IDcuMzc1NDM2NSA1LjE5MDYwNzcgNy4yODYzMzU2IDUuNDI1NzgxMiA3LjE4NTU0NjkgQyA1Ljk0OTk3MDIgNi45NjA4OTQ1IDYuODMzNDk0NyA2LjcyODkyMjggNy45MTQwNjI1IDYuNTQ4ODI4MSBDIDEwLjA3NTE5OCA2LjE4ODYzODggMTMuMDQxNjY3IDYgMTYgNiB6IE0gNi42NTIzNDM4IDExLjQ4MjQyMiBDIDYuOTU5NjIxMyAxMS41NDcwNzggNy4yNDg0MDM1IDExLjYxNzU3MyA3LjU4NTkzNzUgMTEuNjczODI4IEMgOS45MjQ4MDE4IDEyLjA2MzYzOSAxMi45NTgzMzMgMTIuMjUgMTYgMTIuMjUgQyAxOS4wNDE2NjcgMTIuMjUgMjIuMDc1MTk4IDEyLjA2MzYzOSAyNC40MTQwNjIgMTEuNjczODI4IEMgMjQuNzUyMjc0IDExLjYxNzQ2IDI1LjA0MTc3NyAxMS41NDcyMjcgMjUuMzQ5NjA5IDExLjQ4MjQyMiBDIDI2LjQxMjA1MyAxNS44NDU0NjUgMjYuMzgxMjY0IDE5LjU5NTMzNyAyNS4yMzYzMjggMjQuMDA3ODEyIEMgMjQuOTYwMzMyIDI1LjA3MjI2MSAyNC4wOTg4MjggMjUuOTEzMDE1IDIzLjAzMTI1IDI2LjE1NDI5NyBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjMuMDI5Mjk3IDI2LjE1NDI5NyBDIDE4LjQwMTcxMiAyNy4yMDIzNjMgMTMuNTk4Mjg4IDI3LjIwMjM2MyA4Ljk3MDcwMzEgMjYuMTU0Mjk3IEMgNy45MDIzMzE4IDI1LjkxMjA4MiA3LjA0MDcyNjUgMjUuMDcyMjU4IDYuNzYzNjcxOSAyNC4wMDU4NTkgQyA1LjYxODYzOTIgMTkuNTkzNTIgNS41ODk3MDU1IDE1Ljg0NDgxMSA2LjY1MjM0MzggMTEuNDgyNDIyIHogTSAxOS41MTU2MjUgMTQuOTgyNDIyIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAxOS4wOTc2NTYgMTUuMDgzOTg0IEMgMTcuMTIwNTYxIDE1LjkzOTU0NCAxNC44Nzk0MzkgMTUuOTM5NTQ0IDEyLjkwMjM0NCAxNS4wODM5ODQgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDEyLjUxMzY3MiAxNC45OTYwOTQgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDEyLjEwNzQyMiAxNi45MTc5NjkgQyAxNC41OTAzMjYgMTcuOTkyNDA5IDE3LjQwNzcyMSAxNy45OTI0MDkgMTkuODkwNjI1IDE2LjkxNzk2OSBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMTkuNTE1NjI1IDE0Ljk4MjQyMiB6Ij48L3BhdGg+Cjwvc3ZnPg=="/> </p>
+                      <p class="pkg_version"><img alt="svgImg" class="pkg_svg_icons" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxwYXRoIGQ9Ik0gMTEuNSAyIEMgMTAuNDE2NjY3IDIgOS40NzY4OTIzIDIuNDQyMjU1NiA4Ljg3Njk1MzEgMy4xMTcxODc1IEMgOC4yNzcwMTM5IDMuNzkyMTE5NCA4IDQuNjUyNzc3OSA4IDUuNSBDIDggNi4zNDcyMjIxIDguMjc3MDEzOSA3LjIwNzg4MDYgOC44NzY5NTMxIDcuODgyODEyNSBDIDkuMDg4MjUzNyA4LjEyMDUyNTggOS4zNTM1ODg0IDguMzE1NDk3IDkuNjQwNjI1IDguNDg2MzI4MSBDIDkuMjI2ODM0MiA5LjgwMDA3MTkgOC41IDEyLjU2MTAyMyA4LjUgMTYgQyA4LjUgMTkuNDM4OTc3IDkuMjI2ODM0MiAyMi4xOTk5MjggOS42NDA2MjUgMjMuNTEzNjcyIEMgOS4zNTM1ODg0IDIzLjY4NDUwMyA5LjA4ODI1MzcgMjMuODc5NDc0IDguODc2OTUzMSAyNC4xMTcxODggQyA4LjI3NzAxMzkgMjQuNzkyMTE5IDggMjUuNjUyNzc4IDggMjYuNSBDIDggMjcuMzQ3MjIyIDguMjc3MDEzOSAyOC4yMDc4ODIgOC44NzY5NTMxIDI4Ljg4MjgxMiBDIDkuNDc2ODkyMyAyOS41NTc3NDQgMTAuNDE2NjY3IDMwIDExLjUgMzAgQyAxMi41ODMzMzMgMzAgMTMuNTIzMTA4IDI5LjU1Nzc0NCAxNC4xMjMwNDcgMjguODgyODEyIEMgMTQuNzIyOTg2IDI4LjIwNzg4MSAxNSAyNy4zNDcyMjIgMTUgMjYuNSBDIDE1IDI1LjY1Mjc3OCAxNC43MjI5ODYgMjQuNzkyMTE4IDE0LjEyMzA0NyAyNC4xMTcxODggQyAxMy41NDQ4MDQgMjMuNDY2NjY0IDEyLjY0NzE4MSAyMy4wNDIyODUgMTEuNjEzMjgxIDIzLjAxMTcxOSBDIDExLjM2NTAxNyAyMi4wNzIxNTcgMTAuOTA1Njg5IDIwLjExNDY2OSAxMC43MDExNzIgMTcuNzA3MDMxIEMgMTEuNTQzNzk4IDE4LjE5MTIzNSAxMi41MDM1OTYgMTguNTI3NDEyIDEzLjUxNTYyNSAxOC43MjI2NTYgQyAxNS41MDUyMzggMTkuMTA2NDk5IDE3LjcxNTkyNiAxOC45NzkxMDYgMTkuNzQwMjM0IDE4LjMyNDIxOSBDIDIxLjc2NDU0MyAxNy42NjkzMzEgMjMuNjI2MzEzIDE2LjQ3MDg5IDI0Ljc1IDE0LjYzNDc2NiBDIDI1Ljc1NzExMSAxMi45ODkxMjggMjYuMDk0MjkzIDEwLjg1NTEwMyAyNS40OTAyMzQgOC40MTIxMDk0IEMgMjUuNzI1NjgyIDguMjU3MzE0IDI1Ljk0MzMxOSA4LjA4NTAwNiAyNi4xMjMwNDcgNy44ODI4MTI1IEMgMjYuNzIyOTg2IDcuMjA3ODgwNiAyNyA2LjM0NzIyMjEgMjcgNS41IEMgMjcgNC42NTI3Nzc5IDI2LjcyMjk4NiAzLjc5MjExOTQgMjYuMTIzMDQ3IDMuMTE3MTg3NSBDIDI1LjUyMzEwOCAyLjQ0MjI1NTYgMjQuNTgzMzMzIDIgMjMuNSAyIEMgMjIuNDE2NjY3IDIgMjEuNDc2ODkyIDIuNDQyMjU1NiAyMC44NzY5NTMgMy4xMTcxODc1IEMgMjAuMjc3MDE0IDMuNzkyMTE5NCAyMCA0LjY1Mjc3NzkgMjAgNS41IEMgMjAgNi4zNDcyMjIxIDIwLjI3NzAxNCA3LjIwNzg4MDYgMjAuODc2OTUzIDcuODgyODEyNSBDIDIxLjQ3Njg5MiA4LjU1Nzc0NDQgMjIuNDE2NjY3IDkgMjMuNSA5IEMgMjMuNTI3Njc4IDkgMjMuNTUyNTkxIDguOTkyNzYxNCAyMy41ODAwNzggOC45OTIxODc1IEMgMjQuMDU1NTkxIDEwLjk1MjAxNiAyMy43NTY2OTQgMTIuNDIzNjAzIDIzLjA0Mjk2OSAxMy41ODk4NDQgQyAyMi4yMzM4NDMgMTQuOTExOTY5IDIwLjgwODQ0MSAxNS44NzcyNjIgMTkuMTI1IDE2LjQyMTg3NSBDIDE3LjQ0MTU1OSAxNi45NjY0ODggMTUuNTI0MjMxIDE3LjA3NDE3MyAxMy44OTQ1MzEgMTYuNzU5NzY2IEMgMTIuNDI1MTQ1IDE2LjQ3NjI4NyAxMS4yOTg5MzcgMTUuODIzNjg3IDEwLjYxNzE4OCAxNS4wMDM5MDYgQyAxMC43NTgwMDkgMTIuMjQ0NTUgMTEuMzA5MDUyIDEwLjAxMzY4NSAxMS41OTk2MDkgOC45OTAyMzQ0IEMgMTIuNjM5NDg1IDguOTYzMjIxMyAxMy41NDIxNzUgOC41MzYyOTM3IDE0LjEyMzA0NyA3Ljg4MjgxMjUgQyAxNC43MjI5ODYgNy4yMDc4ODA2IDE1IDYuMzQ3MjIyMSAxNSA1LjUgQyAxNSA0LjY1Mjc3NzkgMTQuNzIyOTg2IDMuNzkyMTE5NCAxNC4xMjMwNDcgMy4xMTcxODc1IEMgMTMuNTIzMTA4IDIuNDQyMjU1NiAxMi41ODMzMzMgMiAxMS41IDIgeiBNIDExLjUgNCBDIDEyLjA4MzMzMyA0IDEyLjM5MzU1OSA0LjE4Mjc0NDQgMTIuNjI2OTUzIDQuNDQ1MzEyNSBDIDEyLjg2MDM0NyA0LjcwNzg4MDYgMTMgNS4wOTcyMjIxIDEzIDUuNSBDIDEzIDUuOTAyNzc3OSAxMi44NjAzNDcgNi4yOTIxMTk0IDEyLjYyNjk1MyA2LjU1NDY4NzUgQyAxMi4zOTM1NTkgNi44MTcyNTU2IDEyLjA4MzMzMyA3IDExLjUgNyBDIDEwLjkxNjY2NyA3IDEwLjYwNjQ0MSA2LjgxNzI1NTYgMTAuMzczMDQ3IDYuNTU0Njg3NSBDIDEwLjEzOTY1MyA2LjI5MjExOTQgMTAgNS45MDI3Nzc5IDEwIDUuNSBDIDEwIDUuMDk3MjIyMSAxMC4xMzk2NTMgNC43MDc4ODA2IDEwLjM3MzA0NyA0LjQ0NTMxMjUgQyAxMC42MDY0NDEgNC4xODI3NDQ0IDEwLjkxNjY2NyA0IDExLjUgNCB6IE0gMjMuNSA0IEMgMjQuMDgzMzMzIDQgMjQuMzkzNTU5IDQuMTgyNzQ0NCAyNC42MjY5NTMgNC40NDUzMTI1IEMgMjQuODYwMzQ3IDQuNzA3ODgwNiAyNSA1LjA5NzIyMjEgMjUgNS41IEMgMjUgNS45MDI3Nzc5IDI0Ljg2MDM0NyA2LjI5MjExOTQgMjQuNjI2OTUzIDYuNTU0Njg3NSBDIDI0LjM5MzU1OSA2LjgxNzI1NTYgMjQuMDgzMzMzIDcgMjMuNSA3IEMgMjIuOTE2NjY3IDcgMjIuNjA2NDQxIDYuODE3MjU1NiAyMi4zNzMwNDcgNi41NTQ2ODc1IEMgMjIuMTM5NjUzIDYuMjkyMTE5NCAyMiA1LjkwMjc3NzkgMjIgNS41IEMgMjIgNS4wOTcyMjIxIDIyLjEzOTY1MyA0LjcwNzg4MDYgMjIuMzczMDQ3IDQuNDQ1MzEyNSBDIDIyLjYwNjQ0MSA0LjE4Mjc0NDQgMjIuOTE2NjY3IDQgMjMuNSA0IHogTSAxMS41IDI1IEMgMTIuMDgzMzMzIDI1IDEyLjM5MzU1OSAyNS4xODI3NDQgMTIuNjI2OTUzIDI1LjQ0NTMxMiBDIDEyLjg2MDM0NyAyNS43MDc4ODEgMTMgMjYuMDk3MjIyIDEzIDI2LjUgQyAxMyAyNi45MDI3NzggMTIuODYwMzQ3IDI3LjI5MjExOCAxMi42MjY5NTMgMjcuNTU0Njg4IEMgMTIuMzkzNTU5IDI3LjgxNzI1NiAxMi4wODMzMzMgMjggMTEuNSAyOCBDIDEwLjkxNjY2NyAyOCAxMC42MDY0NDEgMjcuODE3MjU2IDEwLjM3MzA0NyAyNy41NTQ2ODggQyAxMC4xMzk2NTMgMjcuMjkyMTE5IDEwIDI2LjkwMjc3OCAxMCAyNi41IEMgMTAgMjYuMDk3MjIyIDEwLjEzOTY1MyAyNS43MDc4ODIgMTAuMzczMDQ3IDI1LjQ0NTMxMiBDIDEwLjYwNjQ0MSAyNS4xODI3NDQgMTAuOTE2NjY3IDI1IDExLjUgMjUgeiI+PC9wYXRoPgo8L3N2Zz4="/> </p>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="package-card-arch">
+                      <p class="pkg_arch pkg_arch_rootless">iphoneos-arm</p>
+                    </div>
+                  </div>
+                <div class="col">
+                    <p class="pkg_arch pkg_arch_rootful">iphoneos-arm</p>
+                  </div></div>
+                </div>
+              </div>
+            </a>
+          </div>*/
+
+      /*{
+    "bundle_id": "io.github.worksbybbs.linealcc",
+    "architecture": "iphoneos-arm",
+    "name": "Lineal CC",
+    "version": "1.4",
+    "tagline": "A simple CC theme",
+    "homepage": "https://alo.works/",
+    "developer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "maintainer": {
+        "name": "Alo",
+        "email": "bbscydia@gmail.com"
+    },
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/alolastmoment"
+        }
+    ],
+    "section": "Themes (Control Center)",
+    "works_min": "11.0",
+    "works_max": "14.3",
+    "featured": "false",
+    "changelog": [
+        {
+            "version": "1.2",
+            "changes": "\t\n• Moved Top Bar Icons to Lineal Statusbar Theme"
+        },
+        {
+            "version": "1.3",
+            "changes": "\t\n• Added Prysm Support"
+        },
+        {
+            "version": "1.4",
+            "changes": "\t\n• Should theme Prysm automatically when applied in (Snowboard) theme engine."
+        }
+    ]
+}*/
 
     }
+
+    $(document).ready(function () {
+      $('.nav-link').on('click', function () {
+
+        //console.log(this);
+        var target = $(this).data('target');
+        console.log(target);
+        $('.dataDivs').not(target).slideUp();
+        $('.nav-link').not(target).removeClass('active');
+        $(this).addClass('nav-link active');
+        $(target).slideDown();
+
+      });
+
+      $('.active').click();
+
+      $(".darkModeIcon").click(function () {
+        $(this).toggleClass("lightModeIcon");
+
+
+        if ($('body').hasClass('lightMode')) {
+          $('body').removeClass('lightMode');
+          $('body').addClass('darkMode');
+        } else {
+          $('body').removeClass('darkMode');
+          $('body').addClass('lightMode');
+        }
+
+      });
+
+      $('#GetPackagesButton').click();
+    });
+
+
   </script>
 
 </body>
